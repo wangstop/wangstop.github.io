@@ -22,3 +22,6 @@ Route::get('/news', function () {
 Auth::routes();
 
 Route::get('/home', 'HomeController@index')->name('home');
+Route::get('/home/news', 'NewController@index');
+
+Route::post('/home/news/store', 'NewController@store');
