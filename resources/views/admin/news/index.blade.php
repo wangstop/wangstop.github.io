@@ -36,8 +36,11 @@
                 <td>{{$item->content}}</td>
                 <td>
                 <a href="/admin/news/edit/{{$item->id}}" class="btn btn-success ">修改</a>
-                    <button class="btn btn-danger ">刪除</button>
-                    
+                    <button class="btn btn-danger "onclick="disp_confirm({{$item->id}})">刪除</button>
+                    <form id="logout-form-{{$item->id}}" action="/admin/news/delete/{{$item->id}}" method="POST" style="display: none;">
+                        @csrf
+                    </form>
+
                 </td>
 
             </tr>
@@ -75,6 +78,16 @@ $(document).ready(function() {
 } );
 
 
+function disp_confirm(id)
+  {
+      console.log(id);
+  var r=confirm("你確定要刪除嗎")
+  if (r==true)
+    {
+    document.getElementById(`logout-form-${id}`).submit();
+    }
+
+  }
 
 </script>
 

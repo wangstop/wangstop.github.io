@@ -11,7 +11,7 @@ class NewController extends Controller
     public function index(){
 
         $all_news = News::all();
-
+        // dd($all_news);
         return view('/admin/news/index',compact('all_news'));
 
     }
@@ -43,7 +43,7 @@ class NewController extends Controller
 
     // $request提交的所有資料
     public function update(Request $request,$id){
-        dd($request);
+        // dd($request);
         // 方法一
         // find($id)找到id的資料
         // $news = News::find($id);
@@ -64,11 +64,11 @@ class NewController extends Controller
 
     }
 
-    public function delete($id){
+    public function delete(Request $request,$id){
 
-        $news = News::find($id);
+        News::find($id)->delete();
+        return redirect('/home/news');
 
-        return view('/admin/news/edit',compact('news'));
     }
 
 }
