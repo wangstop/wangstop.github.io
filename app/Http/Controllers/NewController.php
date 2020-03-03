@@ -63,4 +63,12 @@ class NewController extends Controller
         // redirect跑完之後回到首頁(home/news)
 
     }
+
+    public function delete($id){
+
+        $news = News::find($id);
+
+        return view('/admin/news/edit',compact('news'));
+    }
+
 }

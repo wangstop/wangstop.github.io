@@ -38,4 +38,4 @@ Route::get('/admin/news/edit/{id}', 'NewController@edit');
 // 更新
 Route::post('/admin/news/update/{id}', 'NewController@update');
 // 刪除
-Route::post('/admin/news/delete/{id}', 'NewController@update');
+Route::post('/admin/news/delete/{id}', 'NewController@delete');

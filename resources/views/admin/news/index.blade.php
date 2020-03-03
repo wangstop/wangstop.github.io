@@ -37,6 +37,7 @@
                 <td>
                 <a href="/admin/news/edit/{{$item->id}}" class="btn btn-success ">修改</a>
                     <button class="btn btn-danger ">刪除</button>
+                    
                 </td>
 
             </tr>
@@ -72,6 +73,8 @@
 $(document).ready(function() {
     $('#example').DataTable();
 } );
+
+
 
 </script>
 
