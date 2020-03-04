@@ -22,6 +22,7 @@ class FrontController extends Controller
     public function news(){
 
         // 取得資料庫的東西(news)
+        // orderBy('sort','desc')根據sort去做排序
         $news_data = DB::table('news')->orderBy('sort','desc')->get();
         return view('front/news',compact('news_data'));
     }

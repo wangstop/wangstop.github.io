@@ -3,8 +3,8 @@
 @section('content')
 
 <div class="container">
-    
-    {{-- enctype="multipart/form-data"上傳檔案 --}}
+
+    {{-- enctype="multipart/form-data"一種編碼方式for img --}}
 
     <form method="POST" action="/home/news/store"  enctype="multipart/form-data">
         @csrf

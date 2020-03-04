@@ -23,7 +23,9 @@
 
                 <th>img</th>
                 <th>title</th>
+                <th>sort</th>
                 <th>content</th>
+
                 <th></th>
             </tr>
         </thead>
@@ -31,9 +33,13 @@
 
             @foreach ($all_news as $item)
             <tr>
-                <td>{{$item->img}}</td>
+                <td>
+                    <img src="{{($item->img)}}" alt="">
+                </td>
                 <td>{{$item->title}}</td>
+                <td>{{$item->sort}}</td>
                 <td>{{$item->content}}</td>
+
                 <td>
                 <a href="/admin/news/edit/{{$item->id}}" class="btn btn-success ">修改</a>
                     <button class="btn btn-danger "onclick="disp_confirm({{$item->id}})">刪除</button>
@@ -73,8 +79,13 @@
 </script>
 
 <script>
+
+
 $(document).ready(function() {
-    $('#example').DataTable();
+    $('#example').DataTable({
+    "order": [[ 2, 'desc' ]]
+    // 權重排序0是針對誰去調desc大排到小
+} );
 } );
 
 

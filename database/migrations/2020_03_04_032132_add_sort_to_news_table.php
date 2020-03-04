@@ -13,6 +13,10 @@ class AddSortToNewsTable extends Migration
      */
     public function up()
     {
+        // 新增欄位
+        // default(0)預設為0
+        // Schema指向資料表
+
         Schema::table('news', function (Blueprint $table) {
             $table->integer('sort')->after('content')->default(0);
 
