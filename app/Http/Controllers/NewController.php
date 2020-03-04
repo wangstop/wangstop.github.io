@@ -20,7 +20,18 @@ class NewController extends Controller
     public function store(Request $request){
 
         $news_data=$request->all();
+
+        // $file_name指向封包圖片
+        $file_name = $request->file('img')->store('','public');
+        // dd($file_name);
+        // $file_name覆蓋 $news_data的圖片
+        $news_data['img'] = $file_name;
+
         News::create($news_data)->save();
+
+
+
+
         return redirect('/home/news');
 
     }

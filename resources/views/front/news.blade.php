@@ -7,7 +7,7 @@
 
 
     <div class="container">
-        <div class="media-container-row">
+        <div class="media-container-row padding-top">
 
             @foreach ($news_data as $item)
             <div class="card p-3 col-12 col-md-6 col-lg-4">

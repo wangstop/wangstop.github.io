@@ -13,12 +13,13 @@
 
 Route::get('/', 'FrontController@index');
 
-Route::get('/', 'FrontController@news');
+// Route::get('/', 'FrontController@news');
+
+Route::get('/front/product', 'FrontController@product');
 
 
-Route::get('/news', function () {
-    return view('front/news');
-});
+Route::get('/news','FrontController@news');
+
 
 Auth::routes();
 
@@ -39,3 +40,4 @@ Route::get('/admin/news/edit/{id}', 'NewController@edit');
 Route::post('/admin/news/update/{id}', 'NewController@update');
 // 刪除
 Route::post('/admin/news/delete/{id}', 'NewController@delete');
+
