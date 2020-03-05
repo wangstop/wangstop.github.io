@@ -163,6 +163,7 @@ class NewController extends Controller
                 //上傳圖片
                 $path = $this->fileUpload($file, 'product');
                 //新增資料進DB
+                // 用$images代表使用 News_img這個model
                 $images = new News_img;
 
                 $images->img_url = $path;
