@@ -4,19 +4,26 @@
 
 <div class="container">
 
-    <form method="POST" action="/admin/news/update/{{$news->id}}">
+    <form method="POST" action="/admin/news/update/{{$news->id}}" enctype="multipart/form-data">
 
         <h1>編輯訊息</h1>
 
         @csrf
-        <div class="form-group">
+        <div class="form-group" >
           <label for="img">現有圖片</label>
-        <input type="file" class="form-control" id="img" name="img" value="{{$news->img}}">
+        <img src="{{$news->img}}" alt="" srcset="" class="img-fluid" width="100px" >
+        <input type="file" class="form-control" id="img" name="img" >
         </div>
 
         <div class="form-group">
             <label for="img">Image</label>
-          <input type="file" class="form-control" id="img" name="img" value="{{$news->img}}">
+
+            @foreach ($news->img_data as $item)
+            <img src="{{$item->img_url}}" alt="" class="img-fluid" width="100px">
+            @endforeach
+
+
+            <input type="file" class="form-control" id="multipleimg" name="multipleimg[]"  multiple>
           </div>
 
 
