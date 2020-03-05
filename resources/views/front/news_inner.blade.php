@@ -9,7 +9,14 @@
     <div class="container">
         <div class="media-container-row padding-top">
 
-            @foreach ($news_data as $item)
+
+            @foreach ($img-> as $item)
+
+
+            @endforeach
+
+
+            {{-- @foreach ($news_data as $item)
             <div class="card p-3 col-12 col-md-6 col-lg-4">
                 <div class="card-wrapper">
                     <div class="card-img">
@@ -24,13 +31,13 @@
                         </p>
                     </div>
                     <div class="mbr-section-btn text-center">
-                        <a href="front/news_inner/{{$item->id}}" class="btn btn-primary display-4">
+                        <a href="https://mobirise.co" class="btn btn-primary display-4">
                             Learn More
                         </a>
                     </div>
                 </div>
             </div>
-            @endforeach
+            @endforeach --}}
 
 
 

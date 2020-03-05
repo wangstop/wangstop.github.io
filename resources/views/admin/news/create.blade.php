@@ -9,17 +9,23 @@
     <form method="POST" action="/home/news/store"  enctype="multipart/form-data">
         @csrf
         <div class="form-group">
-          <label for="img">Image</label>
-          <input type="file" class="form-control" id="img" name="img">
+          <label for="img">單張圖片上傳</label>
+          <input type="file" class="form-control" id="img" name="img" required>
         </div>
+
+        <div class="form-group">
+            <label for="multipleimg">多張圖片上傳</label>
+            <input type="file" class="form-control" id="multipleimg" name="multipleimg" required multiple>
+          </div>
+
         <div class="form-group">
             <label for="title">Title</label>
-            <input type="text" class="form-control" id="title" name="title">
+            <input type="text" class="form-control" id="title" name="title" required>
           </div>
 
           <div class="form-group">
             <label for="content">Content</label>
-            <input type="text" class="form-control" id="content" name="content">
+            <input type="text" class="form-control" id="content" name="content" required>
           </div>
 
 

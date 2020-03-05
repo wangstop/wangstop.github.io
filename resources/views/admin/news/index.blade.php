@@ -34,7 +34,7 @@
             @foreach ($all_news as $item)
             <tr>
                 <td>
-                    <img src="{{($item->img)}}" alt="">
+                    <img width="200" src="{{($item->img)}}" alt="">
                 </td>
                 <td>{{$item->title}}</td>
                 <td>{{$item->sort}}</td>

@@ -3,8 +3,11 @@
 namespace App\Http\Controllers;
 
 use App\News;
+use App\News_img;
 
 use Illuminate\Http\Request;
+use Illuminate\Routing\Controller;
+use Illuminate\Support\Facades\File;
 
 class NewController extends Controller
 {
@@ -34,11 +37,23 @@ class NewController extends Controller
             $news_data['img'] = $path;
         }
 
-
-
         News::create($news_data)->save();
 
 
+        if($request->hasFile('multipleimg'))
+        {
+            $files = $request->file('multipleimg');
+
+            foreach ($files as $file) {
+                //上傳圖片
+                $path = $this->fileUpload($file,'product_imgs');
+                //新增資料進DB
+                $product_img = new News_img;
+                $product_img->product_id = $new_product_id;
+                $product_img->img = $path;
+                $product_img->save();
+            }
+        }
 
 
         return redirect('/home/news');
@@ -54,7 +69,7 @@ class NewController extends Controller
 
     public function edit($id){
 
-        // $news = News::find($id);
+        $news = News::find($id);
 
 
 
@@ -68,8 +83,7 @@ class NewController extends Controller
         // dd($request);
         // 方法一
         // find($id)找到id的資料
-        // $news = News::find($id);
-
+        $news = News::find($id);
         // 針對單筆資料進行附值
         // $news->img = $request->img;
         // $news->title = $request->title;
@@ -78,18 +92,32 @@ class NewController extends Controller
         // $news->save();
 
         // 方法二
-        //  News::find($id)->update($request->all());
+         $table = News::find($id);
+        //  update($request->all());
+
+        $requsetData=$request->all();
+//   dd($requsetData);
 
         if($request->hasFile('img')) {
             // 上傳新圖片
-            $old_image = $item->img;
+            $old_image = $news->img;
             File::delete(public_path().$old_image);
 
             // 刪除就圖片
             $file = $request->file('img');
             $path = $this->fileUpload($file,'product');
             $requsetData['img'] = $path;
+            $news->img = $requsetData['img'] ;
         }
+            $news->title = $requsetData['title'];
+            $news->content =  $requsetData['content'];
+            $news->sort = $requsetData['sort'];
+            $news->save();
+
+
+        // $news->update($requsetData);
+
+
         return redirect('/home/news');
 
         // redirect跑完之後回到首頁(home/news)

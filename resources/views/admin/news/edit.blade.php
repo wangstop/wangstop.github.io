@@ -10,10 +10,17 @@
 
         @csrf
         <div class="form-group">
-          <label for="img">Image</label>
+          <label for="img">現有圖片</label>
         <input type="file" class="form-control" id="img" name="img" value="{{$news->img}}">
         </div>
-        
+
+        <div class="form-group">
+            <label for="img">Image</label>
+          <input type="file" class="form-control" id="img" name="img" value="{{$news->img}}">
+          </div>
+
+
+
         <div class="form-group">
             <label for="title">Title</label>
             <input type="text" class="form-control" id="title" name="title" value="{{$news->title}}">
