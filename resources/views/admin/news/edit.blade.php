@@ -115,6 +115,8 @@
                   success: function(result){
                     $(`.col-2[datanewingid=${nameid}]`).remove();
 
+                    // console.log(result);
+
                   }});
 
             });

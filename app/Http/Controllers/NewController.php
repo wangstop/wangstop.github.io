@@ -276,14 +276,14 @@ class NewController extends Controller
 
         $item = News_img::find($nameid);
 
-        $old_img = $item->img;
+        $old_img = $item->img_url;
 
         File::delete(public_path() . $old_img);
 
         $item->delete();
 
 
-        return 'chbi';
+        return $item;
 
     }
 
