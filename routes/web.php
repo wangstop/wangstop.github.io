@@ -40,4 +40,6 @@ Route::get('/admin/news/edit/{id}', 'NewController@edit');
 Route::post('/admin/news/update/{id}', 'NewController@update');
 // 刪除
 Route::post('/admin/news/delete/{id}', 'NewController@delete');
+// 點擊刪除多張圖片
+Route::post('/admin/news/ajax', 'NewController@ajax');
 

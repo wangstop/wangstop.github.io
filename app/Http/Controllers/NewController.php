@@ -23,8 +23,10 @@ class NewController extends Controller
     public function store(Request $request)
     {
 
-
+        // all()是取出title content img multipleimg
         $news_data = $request->all();
+
+        // dd($request);
 
         // dd( $news_data);
         // $file_name指向封包圖片
@@ -35,7 +37,9 @@ class NewController extends Controller
 
         // 檢查是否有檔案
         if ($request->hasFile('img')) {
+            // dd($request)
             $file = $request->file('img');
+            // dd( $news_data);
             // product上傳資料夾名稱
             $path = $this->fileUpload($file, 'product');
             $news_data['img'] = $path;
@@ -105,6 +109,8 @@ class NewController extends Controller
         // 呼叫需要修改指定
         $news = News::with('img_data')->find($id);
 
+
+
         // 回傳資料
         // dd($news);
         return view('/admin/news/edit', compact('news'));
@@ -145,27 +151,26 @@ class NewController extends Controller
 
         // 取出舊有資料
         $old_news = News::find($id);
-        // dd( $old_news['id']);
+        // dd( $old_news);
         $requsetData = $request->all();
 
         // dd($requsetData);
 
-
-
-
-
         // 當收到內文照片時， 將照片存回資料庫
         if ($request->hasFile('multipleimg')) {
             $files = $request->file('multipleimg');
+            // dd($files);
 
             foreach ($files as $file) {
 
                 //上傳圖片
                 $path = $this->fileUpload($file, 'product');
+                // dd($path);
                 //新增資料進DB
+
                 // 用$images代表使用 News_img這個model
                 $images = new News_img;
-
+                // dd($images);
                 $images->img_url = $path;
                 $images->newid =  $old_news['id'];
                 $images->save();
@@ -184,20 +189,23 @@ class NewController extends Controller
             $old_image = $old_news->img;
             // 把新存的檔案路近 存進file      file()顯示檔案資訊
             $file = $request->file('img');
+            // dd($file);
             //             fileUploda('新存檔案路徑',' 資料夾名稱')
             $path = $this->fileUpload($file, 'news');
             $requsetData['img'] = $path;
             File::delete(public_path() . $old_image);
+
+            $old_news->img =   $requsetData['img'];
+            $old_news->title =  $requsetData['title'];
+            $old_news->content =  $requsetData['content'];
+            $old_news->sort =  $requsetData['sort'];
+            $old_news->save();
         }
 
         // 更新資料  :先把舊資料拿出來 再把新資料塞進去
         // $old_news->update($requsetData);一次完成版
 
-        $old_news->img =   $requsetData['img'];
-        $old_news->title =  $requsetData['title'];
-        $old_news->content =  $requsetData['content'];
-        $old_news->sort =  $requsetData['sort'];
-        $old_news->save();
+
 
         return redirect('/home/news');
     }
@@ -206,7 +214,39 @@ class NewController extends Controller
     public function delete(Request $request, $id)
     {
 
-        News::find($id)->delete();
+
+        $news = News::find($id);
+
+        //   dd($news);
+        $old_img = $news['img'];
+
+        // 先刪除laravel裡面圖片的資料
+        File::delete(public_path() . $old_img);
+
+        // 再刪除資料庫的資料
+        $news->delete();
+
+        // 找到News的id並對News_img的id做刪除
+
+        // 獲得News_img符合id的newid欄位
+        $items = News_img::where('newid', $id)->get();
+
+        // dd($items);
+
+
+        foreach ($items as $item) {
+
+            $old_item = $item->img_url;
+            // dd($old_item);
+            File::delete(public_path() . $old_item);
+            $item->delete();
+        }
+
+
+
+
+
+
         return redirect('/home/news');
     }
 
@@ -230,4 +270,22 @@ class NewController extends Controller
         //回傳 資料庫儲存用的路徑格式
         return '/upload/' . $dir . '/' . $filename;
     }
+    public function ajax(Request $request){
+
+        $nameid=$request->nameid;
+
+        $item = News_img::find($nameid);
+
+        $old_img = $item->img;
+
+        File::delete(public_path() . $old_img);
+
+        $item->delete();
+
+
+        return 'chbi';
+
+    }
+
+
 }
