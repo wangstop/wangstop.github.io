@@ -23,10 +23,11 @@ Route::get('/front/news_inner/{id}','FrontController@news_inner');
 
 Auth::routes();
 
+Route::group(['middleware' => ['auth']], function () {
+
+    
 Route::get('/home', 'HomeController@index')->name('home');
 Route::get('/home/news', 'NewController@index');
-
-
 
 Route::get('/admin/news/edit', 'NewController@edit1');
 
@@ -42,4 +43,14 @@ Route::post('/admin/news/update/{id}', 'NewController@update');
 Route::post('/admin/news/delete/{id}', 'NewController@delete');
 // 點擊刪除多張圖片
 Route::post('/admin/news/ajax', 'NewController@ajax');
+
+
+Route::post('/home/ajax_post_sort', 'NewController@ajax_post_sort');
+
+});
+
+
+
+
+
 

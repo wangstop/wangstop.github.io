@@ -6,6 +6,7 @@ namespace App\Http\Controllers;
 use DB;
 
 use App\News;
+use App\News_img;
 use Illuminate\Http\Request;
 
 class FrontController extends Controller
@@ -26,10 +27,11 @@ class FrontController extends Controller
         // dd($img);
 
         // 方法二
-        $img = News::with('img_data')->find($id);
-        // dd($img);
+        // $img = News::with('img_data')->find($id);
+        $items = News_img::where('newid', $id)->get();
+//  dd($items);
 
-        return view('front/news_inner',compact('img'));
+        return view('front/news_inner',compact('items'));
     }
 
     public function news(){
@@ -37,6 +39,7 @@ class FrontController extends Controller
         // 取得資料庫的東西(news)
         // orderBy('sort','desc')根據sort去做排序
         $news_data = DB::table('news')->orderBy('sort','desc')->get();
+
         return view('front/news',compact('news_data'));
     }
 

@@ -25,7 +25,6 @@ class NewController extends Controller
 
         // all()是取出title content img multipleimg
         $news_data = $request->all();
-
         // dd($request);
 
         // dd( $news_data);
@@ -37,16 +36,18 @@ class NewController extends Controller
 
         // 檢查是否有檔案
         if ($request->hasFile('img')) {
-            // dd($request)
+
             $file = $request->file('img');
-            // dd( $news_data);
+
+            // dd( $file);
             // product上傳資料夾名稱
             $path = $this->fileUpload($file, 'product');
+
+
             $news_data['img'] = $path;
         }
 
         $new = News::create($news_data);
-
 
         if ($request->hasFile('multipleimg')) {
             $files = $request->file('multipleimg');
@@ -60,6 +61,7 @@ class NewController extends Controller
                 $images = new News_img;
                 $images->img_url = $path;
                 $images->newid = $new->id;
+
                 $images->save();
 
                 // $product_img = new ProductImg;
@@ -136,11 +138,12 @@ class NewController extends Controller
         //  $table = News::find($id);
         // //  update($request->all());
         // $requsetData=$request->all();
-        // // $news->update($requsetData);
+        // $news->update($requsetData);
         // News::find($id)->update($request->all());
         // return redirect('/home/news');
         // redirect跑完之後回到首頁(home/news)
 
+        News::find($id)->update($request->all());
 
         // 將請求來的資料做更新動作
         // 檢查是否有上傳新圖片  如果有找到舊有圖片並刪除
@@ -204,6 +207,7 @@ class NewController extends Controller
 
         // 更新資料  :先把舊資料拿出來 再把新資料塞進去
         // $old_news->update($requsetData);一次完成版
+
 
 
 
@@ -287,5 +291,20 @@ class NewController extends Controller
 
     }
 
+    public function ajax_post_sort(Request $request){
+        // 請求過來的東西是物件
+
+        $new_id = $request->id;
+
+        $new_sort = $request->sort;
+        dd($new_sort);
+        $img = News_img::find($new_id);
+
+        $img->sort =  $new_sort;
+
+        $img->save();
+
+        return 'asd';
+    }
 
 }

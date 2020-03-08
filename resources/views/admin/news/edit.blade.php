@@ -39,20 +39,19 @@
 
             <div class="row ">
 
-
-                        @foreach ($news->img_data as $item)
+                 @foreach ($news->img_data as $item)
 
                         {{-- datanewingid自己設定的id --}}
-                         <div class="col-2 " datanewingid="{{$item->id}}">
-                            <div class="card-img " >
+                    <div class="col-2 " datanewingid="{{$item->id}}">
+                        <div class="card-img " >
                             <button type="button" class="box btn btn-danger" datanewingid="{{$item->id}}">X</button>
 
                             <img src="{{$item->img_url}}" alt="" class="img-fluid" width="100%">
-                            <input type="text" class="form-control " id="sort" name="sort" value="{{ $item->sort}}">
-                             </div>
-                         </div>
+                            <input type="number" class="form-control " id="sort" name="sort" value="{{$item->sort}}" onchange="ajax_post_sort(this,{{$item->id}})">
+                        </div>
+                     </div>
 
-                        @endforeach
+                    @endforeach
               </div>
        </div>
 
@@ -100,7 +99,7 @@
             var nameid=this.getAttribute('datanewingid');
 
 
-            jQuery.ajax({
+            $.ajax({
 
                 // 送出的路徑
                   url: "/admin/news/ajax",
@@ -122,6 +121,34 @@
             });
 
 
+            function ajax_post_sort(element,img_id){
+                 
+                console.log(element.value);
+                let img_id = img_id;
+                let sort = element.value;
+
+                $.ajax({
+
+                    // 送出的路徑
+                    url: "/home/ajax_post_sort",
+                    //   方法 預設get
+                    method: 'post',
+
+                    //  點擊抓到的id
+                    data: {
+                        id:img_id,
+                        sort:sort,
+                    },
+
+                    success: function(result){
+                        console.log(result);
+
+                    }
+
+                });
+
+
+            }
 
 
 </script>
