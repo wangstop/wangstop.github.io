@@ -47,7 +47,7 @@
                             <button type="button" class="box btn btn-danger" datanewingid="{{$item->id}}">X</button>
 
                             <img src="{{$item->img_url}}" alt="" class="img-fluid" width="100%">
-                            <input type="number" class="form-control " id="sort" name="sort" value="{{$item->sort}}" onchange="ajax_post_sort(this,{{$item->id}})">
+                            <input type="number" class="form-control " id="sort" name="sort" value="{{$item->sort}}" onchange ="ajax_post_sort(this,{{$item->id}})">
                         </div>
                      </div>
 
@@ -68,7 +68,7 @@
           </div>
 
           <div class="form-group">
-            <label for="sort">sort</label>
+            <label for="sort">權重(數字越大越前面)</label>
             <input type="number" class="form-control" id="sort" name="sort" value="{{$news->sort}}">
           </div>
 
@@ -122,10 +122,10 @@
 
 
             function ajax_post_sort(element,img_id){
-                 
+
                 console.log(element.value);
-                let img_id = img_id;
-                let sort = element.value;
+                // let img_id = img_id;
+                // let sort = element.value;
 
                 $.ajax({
 

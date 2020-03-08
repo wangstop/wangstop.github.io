@@ -291,20 +291,20 @@ class NewController extends Controller
 
     }
 
-    public function ajax_post_sort(Request $request){
-        // 請求過來的東西是物件
+    // public function ajax_post_sort(Request $request){
+    //     // 請求過來的東西是物件
 
-        $new_id = $request->id;
+    //     $new_id = $request->id;
 
-        $new_sort = $request->sort;
-        dd($new_sort);
-        $img = News_img::find($new_id);
+    //     $new_sort = $request->sort;
+    //     dd($new_sort);
+    //     $img = News_img::find($new_id);
 
-        $img->sort =  $new_sort;
+    //     $img->sort =  $new_sort;
 
-        $img->save();
+    //     $img->save();
 
-        return 'asd';
-    }
+    //     return 'asd';
+    // }
 
 }
