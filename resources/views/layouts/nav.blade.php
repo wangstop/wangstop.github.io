@@ -72,9 +72,9 @@
                 </li>
             </ul>
             <div class="navbar-buttons mbr-section-btn">
-                <a class="btn btn-sm btn-primary display-4" href="/">
+                <a class="btn btn-sm btn-primary display-4" href="/proucts">
                     <span class="mbri-save mbr-iconfont mbr-iconfont-btn "></span>
-                    Try It Now!
+                    Shopping
                 </a>
             </div>
         </div>

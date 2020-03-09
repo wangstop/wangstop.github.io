@@ -10,9 +10,10 @@ class News extends Model
 
     public function img_data()
     {
-        return $this->hasMany('App\News_img','newid');
+        // 1對多連到News_img的newid對sort大到小排序
+        return $this->hasMany('App\News_img','newid')->orderBy('sort','desc');
     }
-    
+
 // 1對多
     // foreign_key為 News_img model的id 資料庫預設為New_id
     // 名子不是預設所以加foreign_key

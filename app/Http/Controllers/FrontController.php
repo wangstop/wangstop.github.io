@@ -15,9 +15,8 @@ class FrontController extends Controller
         return view('front/index');
     }
 
-    public function product(){
-        return view('front/product');
-    }
+
+
 
 
     public function news_inner($id){
@@ -29,6 +28,7 @@ class FrontController extends Controller
         // 方法二
         // $img = News::with('img_data')->find($id);
         $items = News_img::where('newid', $id)->get();
+
 //  dd($items);
 
         return view('front/news_inner',compact('items'));
@@ -43,5 +43,12 @@ class FrontController extends Controller
         return view('front/news',compact('news_data'));
     }
 
+
+    public function proucts(){
+
+        $product_data = DB::table('products')->orderBy('sort','desc')->get();
+
+        return view('front/product');
+    }
 
 }

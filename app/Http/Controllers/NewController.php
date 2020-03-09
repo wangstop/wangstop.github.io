@@ -41,7 +41,7 @@ class NewController extends Controller
 
             // dd( $file);
             // product上傳資料夾名稱
-            $path = $this->fileUpload($file, 'product');
+            $path = $this->fileUpload($file, 'news');
 
 
             $news_data['img'] = $path;
@@ -55,7 +55,7 @@ class NewController extends Controller
             foreach ($files as $file) {
 
                 //上傳圖片
-                $path = $this->fileUpload($file, 'product');
+                $path = $this->fileUpload($file, 'news');
                 //新增資料進DB
                 //  $XXX = new ABC  這個變數"使用"ABC model
                 $images = new News_img;
@@ -167,7 +167,7 @@ class NewController extends Controller
             foreach ($files as $file) {
 
                 //上傳圖片
-                $path = $this->fileUpload($file, 'product');
+                $path = $this->fileUpload($file, 'news');
                 // dd($path);
                 //新增資料進DB
 
@@ -291,20 +291,20 @@ class NewController extends Controller
 
     }
 
-    // public function ajax_post_sort(Request $request){
+    public function ajax_post_sort(Request $request){
     //     // 請求過來的東西是物件
 
-    //     $new_id = $request->id;
+        $new_id = $request->id;
 
-    //     $new_sort = $request->sort;
-    //     dd($new_sort);
-    //     $img = News_img::find($new_id);
+        $new_sort = $request->sort;
+        // dd($new_sort);
+        $img = News_img::find($new_id);
 
-    //     $img->sort =  $new_sort;
+        $img->sort =  $new_sort;
 
-    //     $img->save();
+        $img->save();
 
-    //     return 'asd';
-    // }
+        return ;
+    }
 
 }

@@ -38,15 +38,20 @@
                         <li class="nav-item">
                             <a class="nav-link" href="/home/news">最新消息</a>
                         </li>
+
                         <li class="nav-item dropdown">
                             <a id="navbarDropdown" class="nav-link dropdown-toggle" href="#" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" v-pre>
-                               哈摟 <span class="caret"></span>
+                               菜單管理 <span class="caret"></span>
                             </a>
 
                             <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdown">
-                                <a class="dropdown-item" href="">我是下拉選單
+                                <a class="dropdown-item" href="/home/product_types">飲料類型管理
                                 </a>
+                                <a class="dropdown-item" href="/home/products">飲品管理
+                                </a>
+
                             </div>
+
                         </li>
 
                     </ul>
