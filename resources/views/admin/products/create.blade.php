@@ -13,24 +13,40 @@
 
     {{-- enctype="multipart/form-data"一種編碼方式for img --}}
 
-    <form method="POST" action="/home/product_type/store1"  enctype="multipart/form-data">
+    <form method="POST" action="/home/products/store"  enctype="multipart/form-data">
         @csrf
-        <h1>飲品類型管理</h1>
-
-
         <div class="form-group">
-          <label for="title">類型名稱</label>
-          <input type="text" class="form-control" id="title" name="title" required>
+          <label for="img">單張圖片上傳</label>
+          <input type="file" class="form-control" id="img" name="img" required>
         </div>
 
         <div class="form-group">
-            <label for="sort">權重</label>
-            <input type="text" class="form-control" id="sort" name="sort" required >
+            <label for="type_id">Title</label>
+            <select name="type_id">
+                @foreach ($product_type as $item)
+            　<option value="{{$item->id}}">{{$item->types}}</option>
+
+                @endforeach
+
+                </select>
+          </div>
+
+        <div class="form-group">
+            <label for="title">Title</label>
+            <input type="text" class="form-control" id="title" name="title" required>
+          </div>
+
+          <div class="form-group">
+            <label for="content">Content</label>
+
+
+            <textarea type="text" class="form-control" id="content" name="content" required></textarea>
           </div>
 
 
-        <button type="submit" class="btn btn-primary">新增</button>
+        <button type="submit" class="btn btn-primary">Submit</button>
       </form>
+
 
   </div>
 

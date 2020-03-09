@@ -13,27 +13,30 @@
 @section('content')
 
 <div class="container ">
-<a href="/admin/product/create2" class="btn btn-success">新增飲品</a>
+<a href="/admin/products/create" class="btn btn-success">新增飲品</a>
 
 <br />
 
     <table id="example" class="table table-striped table-bordered" style="width:100%">
         <thead>
             <tr>
-
+                <th>圖片</th>
                 <th>飲品類型</th>
                 <th>飲品名稱</th>
+
                 <th>權重</th>
+                <th>內容</th>
                 <th>功能</th>
             </tr>
         </thead>
         <tbody>
-{{--
-            @foreach ($all_news as $item)
+
+            @foreach ($product as $item)
             <tr>
                 <td>
                     <img width="200" src="{{($item->img)}}" alt="">
                 </td>
+                <td>{{$item->product->types}}</td>
                 <td>{{$item->title}}</td>
                 <td>{{$item->sort}}</td>
                 <td>{{$item->content}}</td>
@@ -49,7 +52,7 @@
 
             </tr>
 
-            @endforeach --}}
+            @endforeach
 
         </tbody>
 

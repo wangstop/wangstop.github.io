@@ -1,24 +1,26 @@
 <?php
 
 namespace App\Http\Controllers;
+use App\Products;
 use App\ProductTypes;
+
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\File;
 
 class ProductTypeController extends Controller
 {
 
-    // 產品類別管理
-    public function product_types()
+    public function index()
     {
-        $product = ProductTypes::all();
+        $products = ProductTypes::all();
 
-        return view('/admin/product_type/index');
+        return view('/admin/product_type/index',compact('products'));
 
     }
 
     public function create()
     {
-        $product = ProductTypes::all();
+        // $product = ProductTypes::all();
 
         return view('/admin/product_type/create');
 
@@ -26,84 +28,139 @@ class ProductTypeController extends Controller
 
 
 
-    public function store1(Request $request)
+    public function store(Request $request)
     {
 
-        // all()是取出title content img multipleimg
         $product_data = $request->all();
-        // dd($request);
-
-        // dd( $news_data);
-        // $file_name指向封包圖片
-        // $file_name = $request->file('img')->store('','public');
-        // dd($file_name);
-        // $file_name覆蓋 $news_data的圖片
-        // $news_data['img'] = $file_name;
-
-        // 檢查是否有檔案
-        // if ($request->hasFile('img')) {
-
-        //     $file = $request->file('img');
-
-        //     // dd( $file);
-        //     // product上傳資料夾名稱
-        //     $path = $this->fileUpload($file, 'product');
 
 
-        //     $product_data['img'] = $path;
-        // }
+        $product = ProductTypes::create($product_data);
+        $product->save();
 
-        $new = ProductTypes::create($product_data);
 
+        return redirect('/home/product_types');
+    }
+
+    public function update(Request $request, $id)
+    {
+
+
+        ProductTypes::find($id)->update($request->all());
+
+        $old_products = ProductTypes::find($id);
+        // dd( $old_news);
+        $requsetData = $request->all();
+
+        // dd($requsetData);
+
+        // 當收到內文照片時， 將照片存回資料庫
         // if ($request->hasFile('multipleimg')) {
         //     $files = $request->file('multipleimg');
+        //     // dd($files);
 
         //     foreach ($files as $file) {
 
         //         //上傳圖片
-        //         $path = $this->fileUpload($file, 'product');
+        //         $path = $this->fileUpload($file, 'news');
+        //         // dd($path);
         //         //新增資料進DB
-        //         //  $XXX = new ABC  這個變數"使用"ABC model
-        //         $images = new News_img;
-        //         $images->img_url = $path;
-        //         $images->newid = $new->id;
 
+        //         // 用$images代表使用 News_img這個model
+        //         $images = new News_img;
+        //         // dd($images);
+        //         $images->img_url = $path;
+        //         $images->newid =  $old_news['id'];
         //         $images->save();
 
         //         // $product_img = new ProductImg;
         //         // $product_img->product_id = $new_product_id;
         //         // $product_img->img = $path;
         //         // $product_img->save();
+
+        //         // view:顯示畫面 controller model
         //     }
         // }
 
+        // 檢查是否有上傳主要圖片
+        // if ($request->hasFile('img')) {
+        //     $old_image = $old_products->img;
+        //     // 把新存的檔案路近 存進file      file()顯示檔案資訊
+        //     $file = $request->file('img');
+        //     // dd($file);
+        //     //             fileUploda('新存檔案路徑',' 資料夾名稱')
+        //     $path = $this->fileUpload($file, 'news');
+        //     $requsetData['img'] = $path;
+        //     File::delete(public_path() . $old_image);
 
-
-        // 把NEWS的ID取得 使用foreach 判斷要存幾張圖片 再把newid存成NES的ID
-
-
-
-
-        // if($request->hasFile('multipleimg'))
-        // {
-        //     $files = $request->file('multipleimg');
-
-        //     foreach ($files as $file) {
-        //         //上傳圖片
-        //         $path = $this->fileUpload($file,'product_imgs');
-        //         //新增資料進DB
-        //         $product_img = new News_img;
-        //         $product_img->product_id = $new_product_id;
-        //         $product_img->img = $path;
-        //         $product_img->save();
-        //     }
+        //     $old_products->img =   $requsetData['img'];
+        //     $old_products->title =  $requsetData['title'];
+        //     $old_products->content =  $requsetData['content'];
+        //     $old_products->sort =  $requsetData['sort'];
+        //     $old_products->save();
         // }
 
+        // 更新資料  :先把舊資料拿出來 再把新資料塞進去
+        // $old_news->update($requsetData);一次完成版
 
-        return redirect('/home/product');
+
+
+
+        return redirect('/home/product_types');
+    }
+
+    public function edit($id)
+    {
+        // 呼叫需要修改指定的那筆資料
+        // 呼叫需要修改指定
+        $prducts = ProductTypes::with('product')->find($id);
+
+
+
+        // 回傳資料
+        // dd($news);
+        return view('/admin/product_type/edit');
+        // compact攜帶news到(admin/news/edit)網址
     }
 
 
+    public function delete(Request $request, $id)
+    {
+
+
+        $products = ProductTypes::find($id);
+        $products->delete();
+
+        //   dd($news);
+        // $old_img = $news['img'];
+
+        // // 先刪除laravel裡面圖片的資料
+        // File::delete(public_path() . $old_img);
+
+        // // 再刪除資料庫的資料
+
+        // // 找到News的id並對News_img的id做刪除
+
+        // // 獲得News_img符合id的newid欄位
+        // $items = News_img::where('newid', $id)->get();
+
+        // // dd($items);
+
+
+        // foreach ($items as $item) {
+
+        //     $old_item = $item->img_url;
+        //     // dd($old_item);
+        //     File::delete(public_path() . $old_item);
+        //     $item->delete();
+        // }
+
+
+
+
+
+
+        return redirect('home/product_types');
+    }
 
 
 }

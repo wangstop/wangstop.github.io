@@ -27,20 +27,16 @@
             </tr>
         </thead>
         <tbody>
-{{--
-            @foreach ($all_news as $item)
-            <tr>
-                <td>
-                    <img width="200" src="{{($item->img)}}" alt="">
-                </td>
-                <td>{{$item->title}}</td>
-                <td>{{$item->sort}}</td>
-                <td>{{$item->content}}</td>
 
+            @foreach ($products as $item)
+            <tr>
+
+                <td>{{$item->types}}</td>
+                <td>{{$item->sort}}</td>
                 <td>
-                <a href="/admin/news/edit/{{$item->id}}" class="btn btn-success ">修改</a>
+                <a href="/admin/product_type/edit/{{$item->id}}" class="btn btn-success ">修改</a>
                     <button class="btn btn-danger "onclick="disp_confirm({{$item->id}})">刪除</button>
-                    <form id="logout-form-{{$item->id}}" action="/admin/news/delete/{{$item->id}}" method="POST" style="display: none;">
+                    <form id="logout-form-{{$item->id}}" action="/admin/product_type/delete/{{$item->id}}" method="POST" style="display: none;">
                         @csrf
                     </form>
 
@@ -48,7 +44,7 @@
 
             </tr>
 
-            @endforeach --}}
+            @endforeach
 
         </tbody>
 

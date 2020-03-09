@@ -59,20 +59,20 @@ Route::post('/home/ajax_post_sort', 'NewController@ajax_post_sort');
 
 // 產品類型管理
 
-Route::get('/home/product_types', 'ProductTypeController@product_types');
+Route::get('/home/product_types', 'ProductTypeController@index');
 
 // 新增
 Route::get('/admin/product_type/create', 'ProductTypeController@create');
 
 // 儲存
-Route::post('/home/product_type/store1', 'ProductTypeController@store1');
+Route::post('/home/product_type/store', 'ProductTypeController@store');
 
 // 修改
-Route::get('/admin/news/edit/{id}', 'NewController@edit');
+Route::get('/admin/product_type/edit/{id}', 'ProductTypeController@edit');
 // 更新
-Route::post('/admin/news/update/{id}', 'NewController@update');
+Route::post('/admin/product_type/update/{id}', 'ProductTypeController@update');
 // 刪除
-Route::post('/admin/news/delete/{id}', 'NewController@delete');
+Route::post('/admin/product_type/delete/{id}', 'ProductTypeController@delete');
 
 
 // 產品管理
@@ -80,15 +80,15 @@ Route::post('/admin/news/delete/{id}', 'NewController@delete');
 Route::get('/home/products', 'ProductsController@products');
 
 // 儲存
-Route::post('/home/news/store', 'ProductsController@store');
+Route::post('/home/products/store', 'ProductsController@store');
 // 新增
-Route::get('/admin/product/create2', 'ProductsController@create2');
+Route::get('/admin/products/create', 'ProductsController@create');
 // 修改
-Route::get('/admin/news/edit/{id}', 'ProductsController@edit');
+Route::get('/admin/products/edit/{id}', 'ProductsController@edit');
 // 更新
-Route::post('/admin/news/update/{id}', 'ProductsController@update');
+Route::post('/admin/products/update/{id}', 'ProductsController@update');
 // 刪除
-Route::post('/admin/news/delete/{id}', 'ProductsController@delete');
+Route::post('/admin/products/delete/{id}', 'ProductsController@delete');
 
 
 });

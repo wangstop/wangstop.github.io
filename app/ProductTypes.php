@@ -11,6 +11,6 @@ class ProductTypes extends Model
 
 
     protected $fillable = [
-        'id','type','sort',
+        'id','types','sort',
     ];
 }

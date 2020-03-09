@@ -21,12 +21,12 @@
 
 <div class="container">
 
-    <form method="POST" action="/admin/news/update/{{$news->id}}" enctype="multipart/form-data">
+    <form method="POST" action="/admin/product_type/create/{{$news->id}}" enctype="multipart/form-data">
 
         <h1>編輯訊息</h1>
 
         @csrf
-        <div class="form-group" >
+        {{-- <div class="form-group" >
           <label for="img">現有圖片</label>
         <img src="{{$news->img}}" alt="" srcset="" class="img-fluid" width="100px" >
         <input type="file" class="form-control" id="img" name="img" >
@@ -42,7 +42,6 @@
 
                  @foreach ($news->img_data as $item)
 
-                        {{-- datanewingid自己設定的id --}}
                     <div class="col-2 " datanewingid="{{$item->id}}">
                         <div class="card-img " >
                             <button type="button" class="box btn btn-danger" datanewingid="{{$item->id}}">X</button>
@@ -54,25 +53,25 @@
 
                     @endforeach
               </div>
-       </div>
+       </div> --}}
 
 
 
         <div class="form-group">
             <label for="title">Title</label>
-            <input type="text" class="form-control" id="title" name="title" value="{{$news->title}}">
+            <input type="text" class="form-control" id="types" name="types" value="{{$prducts->title}}">
           </div>
 
           <div class="form-group">
             <label for="sort">權重(數字越大越前面)</label>
-            <input type="number" class="form-control" id="sort" name="sort" value="{{$news->sort}}">
+            <input type="number" class="form-control" id="sort" name="sort" value="{{$prducts->sort}}">
           </div>
 
 
-          <div class="form-group">
+          {{-- <div class="form-group">
             <label for="content">Content</label>
             <textarea type="text" class="form-control" id="content" name="content" value="{{$news->title}}"></textarea>
-          </div>
+          </div> --}}
 
         <button type="submit" class="btn btn-primary">Submit</button>
       </form>

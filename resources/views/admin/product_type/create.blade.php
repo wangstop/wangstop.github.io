@@ -19,8 +19,8 @@
 
 
         <div class="form-group">
-          <label for="title">類型名稱</label>
-          <input type="text" class="form-control" id="title" name="title" required>
+          <label for="types">類型名稱</label>
+          <input type="text" class="form-control" id="types" name="types" required>
         </div>
 
         <div class="form-group">
