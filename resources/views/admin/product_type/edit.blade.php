@@ -21,7 +21,7 @@
 
 <div class="container">
 
-    <form method="POST" action="/admin/product_type/create/{{$news->id}}" enctype="multipart/form-data">
+    <form method="POST" action="/admin/product_type/create/{{$prducts->id}}" enctype="multipart/form-data">
 
         <h1>編輯訊息</h1>
 
@@ -58,8 +58,8 @@
 
 
         <div class="form-group">
-            <label for="title">Title</label>
-            <input type="text" class="form-control" id="types" name="types" value="{{$prducts->title}}">
+            <label for="title">飲品類型</label>
+            <input type="text" class="form-control" id="types" name="types" value="{{$prducts->types}}">
           </div>
 
           <div class="form-group">

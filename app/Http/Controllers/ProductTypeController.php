@@ -112,13 +112,13 @@ class ProductTypeController extends Controller
     {
         // 呼叫需要修改指定的那筆資料
         // 呼叫需要修改指定
-        $prducts = ProductTypes::with('product')->find($id);
-
+        $prducts = ProductTypes::with('product_data')->find($id);
+// dd($prducts);
 
 
         // 回傳資料
         // dd($news);
-        return view('/admin/product_type/edit');
+        return view('/admin/product_type/edit',compact('prducts'));
         // compact攜帶news到(admin/news/edit)網址
     }
 
