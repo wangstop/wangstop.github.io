@@ -42,7 +42,7 @@
                 <td>{{$item->content}}</td>
 
                 <td>
-                <a href="/admin/news/edit/{{$item->id}}" class="btn btn-success ">修改</a>
+                <a href="/admin/products/edit/{{$item->id}}" class="btn btn-success ">修改</a>
                     <button class="btn btn-danger "onclick="disp_confirm({{$item->id}})">刪除</button>
                     <form id="logout-form-{{$item->id}}" action="/admin/news/delete/{{$item->id}}" method="POST" style="display: none;">
                         @csrf

@@ -21,7 +21,7 @@
 
 <div class="container">
 
-    <form method="POST" action="/admin/product_type/create/{{$prducts->id}}" enctype="multipart/form-data">
+    <form method="POST" action="/admin/product_type/update/{{$products->id}}" enctype="multipart/form-data">
 
         <h1>編輯訊息</h1>
 
@@ -59,12 +59,12 @@
 
         <div class="form-group">
             <label for="title">飲品類型</label>
-            <input type="text" class="form-control" id="types" name="types" value="{{$prducts->types}}">
+            <input type="text" class="form-control" id="types" name="types" value="{{$products->types}}">
           </div>
 
           <div class="form-group">
             <label for="sort">權重(數字越大越前面)</label>
-            <input type="number" class="form-control" id="sort" name="sort" value="{{$prducts->sort}}">
+            <input type="number" class="form-control" id="sort" name="sort" value="{{$products->sort}}">
           </div>
 
 

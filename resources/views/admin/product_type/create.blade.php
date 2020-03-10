@@ -42,5 +42,10 @@
 
 <script>
 
+// $(document).ready(function() {
+//                 $('#content').summernote({
+//                     lang: 'ko-KR' // default: 'en-US'
+//                 });
+//                 });
 </script>
 @endsection

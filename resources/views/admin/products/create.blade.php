@@ -39,8 +39,7 @@
           <div class="form-group">
             <label for="content">Content</label>
 
-
-            <textarea type="text" class="form-control" id="content" name="content" required></textarea>
+            <input type="text" class="form-control" id="content" name="content" required>
           </div>
 
 
@@ -57,6 +56,10 @@
 <script src="https://cdn.jsdelivr.net/npm/summernote@0.8.16/dist/summernote.min.js"></script>
 
 <script>
-
+            // $(document).ready(function() {
+            //     $('#content').summernote({
+            //         lang: 'ko-KR' // default: 'en-US'
+            //     });
+            //     });
 </script>
 @endsection
