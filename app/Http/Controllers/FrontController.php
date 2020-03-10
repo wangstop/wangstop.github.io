@@ -44,11 +44,18 @@ class FrontController extends Controller
     }
 
 
-    public function proucts(){
+    // public function proucts(){
 
-        $product_data = DB::table('products')->orderBy('sort','desc')->get();
+    //     $product = DB::table('products')->orderBy('sort','desc')->get();
+
+    //     return view('front/product');
+    // }
+
+
+    public function proucts_Types(){
+
+        $product_data = DB::table('product_types')->orderBy('sort','desc')->get();
 
         return view('front/product');
     }
-
 }

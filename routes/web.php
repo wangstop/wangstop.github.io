@@ -21,7 +21,7 @@ Route::get('/news','FrontController@news');
 
 
 Route::get('/proucts_Types', 'FrontController@proucts_Types');
-Route::get('/home/products','FrontController@proucts');
+Route::get('products','FrontController@proucts');
 
 
 
@@ -77,7 +77,7 @@ Route::post('/admin/product_type/delete/{id}', 'ProductTypeController@delete');
 
 // 產品管理
 
-Route::get('/home/products', 'ProductsController@products');
+Route::get('/home/products', 'ProductsController@index');
 
 // 儲存
 Route::post('/home/products/store', 'ProductsController@store');

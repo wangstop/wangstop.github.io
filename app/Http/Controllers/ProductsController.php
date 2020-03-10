@@ -5,15 +5,16 @@ namespace App\Http\Controllers;
 use App\Products;
 use App\ProductTypes;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\File;
 
 class ProductsController extends Controller
 {
 
-    public function products()
+    public function index()
     {
         $product = Products::all();
-
+// dd($product);
         return view('/admin/products/index',compact('product'));
 
     }
@@ -134,43 +135,14 @@ class ProductsController extends Controller
         // 請求來的資料
 
         // 取出舊有資料
-        $old_news = Products::find($id);
-        // dd( $old_news);
+        $old_product = Products::find($id);
+        // dd( $old_product);
         $requsetData = $request->all();
 
-        // dd($requsetData);
-
-        // 當收到內文照片時， 將照片存回資料庫
-        // if ($request->hasFile('multipleimg')) {
-        //     $files = $request->file('multipleimg');
-        //     // dd($files);
-
-        //     foreach ($files as $file) {
-
-        //         //上傳圖片
-        //         $path = $this->fileUpload($file, 'news');
-        //         // dd($path);
-        //         //新增資料進DB
-
-        //         // 用$images代表使用 News_img這個model
-        //         $images = new News_img;
-        //         // dd($images);
-        //         $images->img_url = $path;
-        //         $images->newid =  $old_news['id'];
-        //         $images->save();
-
-        //         // $product_img = new ProductImg;
-        //         // $product_img->product_id = $new_product_id;
-        //         // $product_img->img = $path;
-        //         // $product_img->save();
-
-        //         // view:顯示畫面 controller model
-        //     }
-        // }
 
         // 檢查是否有上傳主要圖片
         if ($request->hasFile('img')) {
-            $old_image = $old_news->img;
+            $old_image = $old_product->img;
             // 把新存的檔案路近 存進file      file()顯示檔案資訊
             $file = $request->file('img');
             // dd($file);
@@ -179,11 +151,10 @@ class ProductsController extends Controller
             $requsetData['img'] = $path;
             File::delete(public_path() . $old_image);
 
-            $old_news->img =   $requsetData['img'];
-            $old_news->title =  $requsetData['title'];
-            $old_news->content =  $requsetData['content'];
-            $old_news->sort =  $requsetData['sort'];
-            $old_news->save();
+            $old_product->img =   $requsetData['img'];
+            $old_product->content =  $requsetData['content'];
+            $old_product->sort =  $requsetData['sort'];
+            $old_product->save();
         }
 
         // 更新資料  :先把舊資料拿出來 再把新資料塞進去
@@ -191,8 +162,21 @@ class ProductsController extends Controller
 
 
 
-
         return redirect('/home/products');
+    }
+
+    public function delete(Request $request, $id)
+    {
+        $products = Products::find($id);
+        $old_img = $products->img;
+        // dd($products);
+
+        File::delete(public_path() . $old_img);
+
+        $products->delete();
+
+
+        return view('/admin/products/index');
     }
 
     private function fileUpload($file, $dir)

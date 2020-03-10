@@ -36,7 +36,7 @@
                 <td>
                     <img width="200" src="{{($item->img)}}" alt="">
                 </td>
-                <td>{{$item->product->types}}</td>
+                <td>{{$item->drink->types}}</td>
                 <td>{{$item->title}}</td>
                 <td>{{$item->sort}}</td>
                 <td>{{$item->content}}</td>
@@ -44,7 +44,7 @@
                 <td>
                 <a href="/admin/products/edit/{{$item->id}}" class="btn btn-success ">修改</a>
                     <button class="btn btn-danger "onclick="disp_confirm({{$item->id}})">刪除</button>
-                    <form id="logout-form-{{$item->id}}" action="/admin/news/delete/{{$item->id}}" method="POST" style="display: none;">
+                    <form id="logout-form-{{$item->id}}" action="/admin/products/delete/{{$item->id}}" method="POST" style="display: none;">
                         @csrf
                     </form>
 
