@@ -1,0 +1,160 @@
+* {
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+}
+
+a {
+  text-decoration: none;
+  font-size: 16px;
+  font-weight: 600;
+}
+
+ul {
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  margin: 0;
+}
+
+.navbar {
+  padding: 0;
+}
+
+.navbar .nav-in {
+  background-color: black;
+  width: 100%;
+  max-width: 1600px;
+  padding: 0 6.5%;
+  margin: auto;
+  margin: auto;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.navbar .nav-in a {
+  color: white;
+}
+
+.navbar .nav-in .logo .logoimg {
+  width: 16px;
+  height: 16px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+  margin-right: 174px;
+}
+
+.navbar .nav-in .logo .logoimg:hover .box {
+  -webkit-transition: 0.5s;
+  transition: 0.5s;
+}
+
+.navbar .nav-in .logo .logoimg:hover .box:nth-child(1) {
+  background-color: red;
+}
+
+.navbar .nav-in .logo .logoimg:hover .box:nth-child(2) {
+  background-color: green;
+}
+
+.navbar .nav-in .logo .logoimg:hover .box:nth-child(3) {
+  background-color: blue;
+}
+
+.navbar .nav-in .logo .logoimg:hover .box:nth-child(4) {
+  background-color: yellow;
+}
+
+.navbar .nav-in .logo .logoimg .box {
+  background-color: white;
+  width: 44%;
+  height: 44%;
+}
+
+.navbar .nav-in .logo .logoimg .box:nth-child(1) {
+  margin: 0 0.5px 0.5px 0;
+}
+
+.navbar .nav-in .logo .logoimg .box:nth-child(2) {
+  margin: 0 0 0.5px 0.5px;
+}
+
+.navbar .nav-in .logo .logoimg .box:nth-child(3) {
+  margin: 0 0.5px 0 0;
+}
+
+.navbar .nav-in .logo .logoimg .box:nth-child(4) {
+  margin: 0 0 0 0.5px;
+}
+
+.navbar .nav-in .SiteTitle {
+  margin-right: auto;
+}
+
+.navbar .nav-in .action li {
+  display: inline-block;
+}
+
+.navbar .nav-in .action li a {
+  padding: 0 45px;
+}
+
+.content {
+  width: 100%;
+  max-width: 1600px;
+  background-color: black;
+  padding: 77px 0 60px 0;
+  color: white;
+}
+
+.content .content1 {
+  width: 100%;
+  padding: 0 6.5%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+}
+
+.content .content1 .inner1 {
+  width: 30%;
+}
+
+.content .content1 .inner1 .in-title h2 {
+  color: #4fe5ff;
+  font-size: 64px;
+  line-height: 80px;
+}
+
+.content .content1 .inner1 .in-in {
+  font-size: 16px;
+  line-height: 24px;
+  font-weight: 600;
+}
+
+.content .content1 .inner2 {
+  width: 70%;
+  height: 100%;
+  text-align: center;
+  position: relative;
+}
+
+.content .content1 .inner2 .in-L {
+  position: absolute;
+  bottom: 100px;
+  left: 50px;
+}
+
+.content .content1 .inner2 .in-R {
+  top: 20px;
+  right: 35px;
+  position: absolute;
+}
+/*# sourceMappingURL=stylev1.css.map */

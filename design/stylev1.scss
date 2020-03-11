@@ -1,0 +1,141 @@
+*{
+    box-sizing: border-box;
+}
+// logo顏色
+$red:red;
+$green:green;
+$blue:blue;
+$yellow:yellow;
+$white:white;
+$black:black;
+// Fluent Design System benner顏色
+$Fluent:rgb(79, 229, 255);
+
+a{
+    text-decoration: none;
+    font-size: 16px;
+    font-weight: 600;
+}
+ul{
+    margin: 0;
+    padding: 0;
+}
+body{
+    margin: 0;
+}
+.navbar{
+    padding: 0;
+    .nav-in{
+        background-color: black;
+        width: 100%;
+        max-width: 1600px;
+        padding: 0 6.5%;    
+        margin: auto;
+        margin: auto;
+        display: flex;
+        align-items: center;
+        a{
+            color: $white;
+        }
+    
+        .logo{
+            .logoimg{
+                width: 16px;
+                height: 16px;
+                display: flex;
+                flex-wrap: wrap;
+                margin-right: 174px;
+                &:hover{
+                    .box{
+                        transition: 0.5s;
+                        &:nth-child(1){
+                            background-color: $red;
+                        }
+                        &:nth-child(2){
+                            background-color: $green;
+                        }
+                        &:nth-child(3){
+                            background-color: $blue;
+                        }
+                        &:nth-child(4){
+                            background-color: $yellow;
+                        } 
+    
+                    }
+                }
+                .box{
+                    background-color:$white;
+                    width: 44%;
+                    height: 44%;
+                    &:nth-child(1){
+                        margin: 0 0.5px 0.5px 0;
+                    }
+                    &:nth-child(2){
+                        margin: 0 0 0.5px 0.5px;
+                    }
+                    &:nth-child(3){
+                        margin: 0 0.5px 0 0;
+                    }
+                    &:nth-child(4){
+                        margin: 0 0 0 0.5px;
+                    }
+                }
+            }
+        }
+        .SiteTitle{
+            margin-right: auto;
+        }
+        .action{
+            li{
+                display: inline-block;
+                a{
+                    padding: 0 45px;
+                }
+            }
+        }
+    }
+}
+
+.content{
+    width: 100%;
+    max-width: 1600px;
+    background-color: $black;
+    padding: 77px 0 60px 0;
+    color: $white;
+    .content1{
+        width: 100%;
+        padding: 0 6.5%;
+        display: flex;
+        .inner1{
+            width: 30%;
+            .in-title{
+                h2{
+                    color:$Fluent ;
+                    font-size: 64px;
+                    line-height: 80px;
+                }
+            }
+            .in-in{
+                font-size: 16px;
+                line-height: 24px;
+                font-weight: 600;
+            }
+        }
+        .inner2{
+            width: 70%;
+            height: 100%;
+            text-align: center;
+            position: relative;
+            .in-L{
+                position: absolute;
+                bottom: 100px;
+                left: 50px;
+            }
+            .in-R{
+                top: 20px;
+                right: 35px;
+                position: absolute;
+            }
+        }
+    }
+}

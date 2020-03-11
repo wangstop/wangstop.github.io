@@ -1,0 +1,282 @@
+*{
+    box-sizing: border-box;
+}
+// logo顏色
+$red:red;
+$green:green;
+$blue:blue;
+$yellow:yellow;
+$white:white;
+$black:black;
+// Fluent Design System benner顏色
+$Fluent:rgb(79, 229, 255);
+// web windows顏色
+$webwin:rgb(34, 128, 200);
+$web:rgb(37, 142, 222);
+$windows:rgb(79, 229, 255);
+$black1:black;
+// ios android顏色
+$iosand:rgb(95, 207, 99);
+$ios:rgb(207, 143, 255);
+$android:rgb(105, 229, 110);
+// content4顏色
+$black2:rgb(25, 25, 25);
+$white1:white;
+
+
+
+a{
+    text-decoration: none;
+    font-size: 16px;
+    font-weight: 600;
+}
+ul{
+    margin: 0;
+    padding: 0;
+}
+body{
+    margin: 0;
+}
+.navbar{
+    .nav-in{
+        background-color: black;
+        width: 100%;
+        max-width: 1600px;
+        padding: 0 6.5%;    
+        margin: auto;
+        margin: auto;
+        display: flex;
+        align-items: center;
+        a{
+            color: $white;
+        }
+    
+        .logo{
+            .logoimg{
+                width: 16px;
+                height: 16px;
+                display: flex;
+                flex-wrap: wrap;
+                margin-right: 174px;
+                &:hover{
+                    .box{
+                        transition: 0.5s;
+                        &:nth-child(1){
+                            background-color: $red;
+                        }
+                        &:nth-child(2){
+                            background-color: $green;
+                        }
+                        &:nth-child(3){
+                            background-color: $blue;
+                        }
+                        &:nth-child(4){
+                            background-color: $yellow;
+                        } 
+    
+                    }
+                }
+                .box{
+                    background-color:$white;
+                    width: 44%;
+                    height: 44%;
+                    &:nth-child(1){
+                        margin: 0 0.5px 0.5px 0;
+                    }
+                    &:nth-child(2){
+                        margin: 0 0 0.5px 0.5px;
+                    }
+                    &:nth-child(3){
+                        margin: 0 0.5px 0 0;
+                    }
+                    &:nth-child(4){
+                        margin: 0 0 0 0.5px;
+                    }
+                }
+            }
+        }
+        .SiteTitle{
+            margin-right: auto;
+        }
+        .action{
+            li{
+                display: inline-block;
+                a{
+                    padding: 0 45px;
+                }
+            }
+        }
+    }
+}
+
+.content{
+    width: 100%;
+    max-width: 1600px;
+    background-color: $black;
+    padding: 77px 0 60px 0;
+    color: $white;
+    margin: auto;
+    .content-1{
+        width: 100%;
+        padding: 0 6.5%;
+        display: flex;
+        .inner1{
+            width: 30%;
+            .in-title{
+                h2{
+                    color:$Fluent ;
+                    font-size: 64px;
+                    line-height: 80px;
+                }
+            }
+            .in-in{
+                font-size: 16px;
+                line-height: 24px;
+                font-weight: 600;
+            }
+        }
+        .inner2{
+            width: 70%;
+            height: 100%;
+            text-align: center;
+            position: relative;
+            .in-L{
+                position: absolute;
+                bottom: 100px;
+                left: 50px;
+            }
+            .in-R{
+                top: 20px;
+                right: 35px;
+                position: absolute;
+            }
+        }
+    }
+}
+.content2{
+    width: 100%;
+    max-width: 1600px;
+    margin: auto;
+    position: relative;
+    &::before{
+        content: "";
+        width: 50%;
+        height: 100%;
+        position: absolute;
+        top: 0px;
+        left: 0px;
+        background-color:$webwin;
+        z-index: 1;
+    }
+    &::after{
+        content: "";
+        width: 50%;
+        height: 100%;
+        position: absolute;
+        top: 0px;
+        right: 0px;
+        background-color: $iosand;
+        z-index: 1;
+
+    }
+    .content2-1{
+        width: 100%;
+        padding: 0 6.5%;
+        margin: auto;
+        display: flex;
+        position: relative;
+        z-index: 2;
+        .con2LR{
+            width: 100%;
+            display: flex;
+            .card{
+                width: 25%;
+                padding: 27px 27px;  
+                border: 0;
+                color: $black1;
+
+                &:nth-child(1){
+                    background-color: $web;
+                }
+                &:nth-child(2){
+                    background-color: $windows;
+                }
+                &:nth-child(3){
+                    background-color: $ios;
+                }
+                &:nth-child(4){
+                    background-color: $android;
+                }
+                .cardimg{
+                    padding-bottom: 140px;
+                }          
+            }
+        }
+    }  
+}
+.content3{
+    .devimg{
+        width: 100%;
+        height: 100vh;
+        background-image:url('./img/msft_verge_fluent.jpg');
+        background-position: center;
+        background-size: cover;
+        background-attachment: fixed;
+        .devtext{
+            width: 100%;
+            padding: 0 6.5%;
+            .devh{
+                font-size: 78px;
+                line-height: 150px;
+                font-weight: 600;
+                h2{
+                    margin-top: 0 !important;
+                }
+            }
+            .devp{
+                max-width: 362px;
+                font-size: 18px;
+                font-weight: 400;
+                // color: black;
+            }
+        }
+    }
+}
+.content4{
+    width: 100%;
+    max-width: 1600px;
+    margin: auto;
+    background-color:$black2;
+    color: $white1;
+    position: relative;
+    .ballimg{
+        width: 100%;
+        padding: 0 6.5%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        padding: 80px 0;
+        .con4line{
+            position: absolute;
+            right: 140px;
+            top: -200px;
+        }
+    }
+
+    .ballin{
+        width: 100%;
+        padding: 0 6.5%;
+        display: flex;
+        justify-content: flex-end;
+        .ballin1{
+            width: 430px;
+            padding-left: 100px;
+            font-size: 16px;
+            line-height: 24px;
+            font-weight: 600;
+            p{
+                margin: 0 !important;
+            }
+        }
+    }
+}

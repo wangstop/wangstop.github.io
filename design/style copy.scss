@@ -1,0 +1,32 @@
+*{
+    box-sizing: border-box;
+}
+// logo顏色
+$red:red;
+$green:green;
+$blue:blue;
+$yellow:yellow;
+$white:white;
+
+body{
+    margin: 0;
+
+}
+.nav-in{
+    background-color: black;
+    width: 100%;
+    max-width: 1600px;
+    padding: 0 5%;
+    margin: auto;
+    display: flex;
+    .logo{
+        .logoimg{
+            width: 16px;
+            height: 16px;
+            background-color: black;
+            display: flex;
+            flex-wrap: wrap;
+
+        }
+    }
+}
