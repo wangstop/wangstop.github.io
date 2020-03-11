@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+    html{
+            scroll-behavior: smooth;
+    }
+    body{
+        background-image: url("img/pattern.jpg");
+        margin: 0;
+    }
+    #all{
+        width: 80%;
+        height: 300vh;
+        margin-left: auto;
+        margin-right: auto;
+    }
+    #areaA{
+        background-image: url("img/farm.jpg");
+        position: relative;
+    }
+    #menu{
+        /* background-color: indianred; */
+        height: 50px;
+        position: absolute;
+        top: 85px;
+        right: 10%;
+        position: fixed;
+    }
+    
+    a{
+        color: darkred;
+    }
+    a:visited{
+        color: rgb(0, 0, 0);
+    }
+    a:hover .menubtn-style{
+        color: floralwhite;
+        background-color: black;
+    }
+    a:active .menubtn-style{
+        color: black;
+        background-color: blanchedalmond;
+    }
+    #logo{
+        width: 160px;
+        height: 160px;
+        border-radius: 80px;
+        position: absolute;
+        top: 25px;
+        left: 10%;
+        background-image: url("img/people.jpg");
+        background-size: cover;
+        position: fixed;/* 選單固定 */
+    }
+    #areaB{
+        background-image: url("img/cows.jpg");
+    }
+
+    #areaC{
+        background-image: url("img/truck.jpg");
+    }
+
+    .area-style{
+        background-color: black;
+        width: 100%;
+        height: 50vh;
+        background-size: cover;
+        padding-top: 50vh;
+        background-attachment: fixed;/* 視差 */
+    }
+    .mask-style{
+        background-color: black;
+        width: 100%;
+        height: 100px;
+        padding: calc(25vh - 50px) 0;
+        background-color: rgba( 0, 0, 0, 0.5);/* 透明 */
+    } 
+    .button-style{
+        background-color: green;
+        width: 200px;
+        height: 100px;
+        margin: 0 auto;
+        transition: 1s;/* 轉場 */
+    }
+    .button-style:hover{
+        background-color: crimson;
+    }
+    .button-style:active{
+        background-color: rgb(128, 120, 10);
+    }
+    .menubtn-style{
+        background-color: rgb(255, 255, 255);
+        line-height: 50px;
+        float: left;
+        padding: 0 15px;
+        border-style: double; 
+        border-radius: 10px; 
+        border-color: snow;
+        margin-right: 10px;
+        transition: 1s;
+    }
+
+
+
+    
+    </style>
+</head>
+<body>
+<div id="all">
+    <div class="area-style" id="areaA">
+        <div id="logo"></div>
+        <div id="menu">
+            <a href="#areaA">
+                <div class="menubtn-style">選單1</div>
+            </a>
+            <a href="#areaB">
+                <div class="menubtn-style">選單2</div>
+            </a>
+            <a href="#areaC">
+                <div class="menubtn-style">選單3</div>
+            </a>
+        </div>
+        <div class="mask-style">
+            <div class="button-style"></div>
+        </div>
+    </div>
+    <div class="area-style" id="areaB">
+        <div class="mask-style" >
+            <div class="button-style"></div>
+        </div>
+    </div>  
+    <div class="area-style" id="areaC">
+        <div class="mask-style">
+            <div class="button-style"></div>
+        </div>
+   </div>
+</div>
+
+</body>
+</html>
