@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        * {
+            box-sizing: border-box;
+        }
+
+        body {
+            margin: 0;
+
+        }
+
+        .all {
+            /* background-color: rgb(24, 183, 223); */
+            width: 100%;
+            /* align-items: center; */
+        }
+
+        .card1 {
+            width: 20%;
+            background-color: rgb(55, 194, 199);
+            margin: auto;
+            border-radius: 20px;
+            margin: 0 20px 20px 0;
+        }
+        .cards{
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+        }
+
+        .mainimg {
+
+            background-color: rgb(131, 127, 127);
+            padding: 20px 20px;
+
+        }
+
+        .mainimg img {
+            width: 100%;
+            height: 200px;
+        }
+
+        .content {
+
+            text-align: center;
+        }
+        .nowtime{
+            width: 100%;
+            text-align: center;
+            padding: 40px 0;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="all">
+        <div class="nowtime"></div>
+        <div class="cards"></div>
+    </div>
+
+
+    <script>
+
+
+        fetch('https://opendata.cwb.gov.tw/api/v1/rest/datastore/F-C0032-001?Authorization=CWB-AF5D8291-CE52-45E5-AF78-A125AB78840E')
+
+            .then(function (response) {
+                return response.json();
+            })
+
+
+            .then(function (wheather_arr) {
+                console.log(wheather_arr);
+
+                let locations = wheather_arr.records.location
+
+                locations.forEach(location => {
+                    // console.log(location)
+                    let location_name = location.locationName
+                    // console.log(location_name)
+
+                    // 天氣現象
+                    let wx = location.weatherElement[0].time[0].parameter.parameterName
+                    // console.log(wx)
+                    let wx_value = location.weatherElement[0].time[0].parameter.parameterValue
+                    // console.log(wx_value)
+
+
+                    // 中午12點-晚上6點(最高溫)
+                    let maxT = location.weatherElement[4].time[0].parameter.parameterName
+                    console.log(maxT)
+
+                    // 中午12點-晚上6點(最低溫)
+                    let minT = location.weatherElement[2].time[0].parameter.parameterName
+                    // console.log(minT)
+
+                    // 舒適度
+                    let ct = location.weatherElement[3].time[0].parameter.parameterName
+                    // console.log(ct)
+
+                    let wximg;
+
+                    if(wx_value=='1'||wx_value=='2'||wx_value=='3')
+                    {
+                        //晴天
+                         wximg='https://encrypted-tbn0.gstatic.com/images?q=tbn%3AANd9GcRWe1IMVmqxltnPKCXI5899Z8QDsTvS3Qbgb8pqe41UnSAcHps4'
+                    }
+                    else if(wx_value=='8'||wx_value=='9'||wx_value=='10'||wx_value=='11'||wx_value=='12'||wx_value=='13')
+                    {
+                        //雨天
+                         wximg='https://media.istockphoto.com/vectors/rain-clouds-thin-line-icon-weather-and-forecast-rainy-day-sign-vector-vector-id1152300674'
+                    }
+                    else 
+                    {
+                        //陰天
+                         wximg='https://lh3.googleusercontent.com/proxy/C4dhKarlpkgpbNY8hHqRf1A05kJpCd5m_NGY9z7vLI__DbQN4Wwwrs-rVkUTH2yvE5S-GTrJF5oSibvF88VMnrk3VdTHmJapKDANptxtiW7s'
+                    }
+
+
+                    let api = document.querySelector('.cards')
+                    api.innerHTML += `
+
+                    <div class="card1">
+                        <div class="mainimg">
+                            <img src="${wximg}" alt="">
+                        </div>
+                        <div class="content">              
+                            <h1>${location_name}</h1>
+                            <h2>${wx}</h2>
+                            <div>
+                                <p>最高溫:${maxT}</p>
+                                <p>最低溫:${minT}</p>
+                            </div>
+                            <p>舒適度:${ct}</p>
+                        </div>
+                    </div>
+
+                    `
+                });
+
+                
+
+                let res=function(){
+
+                let today=new Date();
+               let today_data=today.getUTCFullYear()+'年'+(today.getUTCMonth()+1)+'月'+today.getDate()+'日';
+               let today_time=today.getUTCHours()+'時'+today.getUTCMinutes()+'分'+today.getSeconds()+'秒';
+               console.log(today_data)
+               let time=document.querySelector('.nowtime');
+               time.innerHTML=`<h1>${today_data}${today_time}</h1>`;
+
+
+
+                }
+                let t1 = window.setInterval(res,1); 
+            });
+
+    </script>
+</body>
+
+</html>
