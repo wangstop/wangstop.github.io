@@ -1,0 +1,19 @@
+$red:red;
+$green:green;
+$fs:20px;
+
+.text{
+    background-color: $green;
+    width: 300px;
+    margin: auto;
+    .image{
+        padding: 20px;
+        img{
+            width: 100%;
+        }
+    }
+    .text1{
+        width: 100%;
+        padding: 10px;
+    }
+}

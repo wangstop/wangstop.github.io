@@ -1,0 +1,19 @@
+.text {
+  background-color: green;
+  width: 300px;
+  margin: auto;
+}
+
+.text .image {
+  padding: 20px;
+}
+
+.text .image img {
+  width: 100%;
+}
+
+.text .text1 {
+  width: 100%;
+  padding: 10px;
+}
+/*# sourceMappingURL=style.css.map */
