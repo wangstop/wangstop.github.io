@@ -57,6 +57,9 @@
                             </div>
                         </div>
                         {!! htmlFormSnippet() !!}
+                        @error('g-recaptcha-response')
+                            <div class="alert alert-danger">請重新輸入</div>
+                        @enderror
                         <div class="form-group row mb-0">
                             <div class="col-md-8 offset-md-4">
                                 <button type="submit" class="btn btn-primary">
