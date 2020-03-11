@@ -1,0 +1,62 @@
+@media (max-width: 375px){
+    .navbar{
+        width: 100%;
+        height: 80px;
+        flex-direction: row;
+        padding-left: 5%;
+    }
+    .logo{
+        width: 54px;
+        height: 54px;
+        position: absolute;
+        right: calc(50% - 27px);
+    }
+    .btn{
+        display: block;
+    }
+    a:hover ~ .text{
+        left: 0px;
+        transition: 1s;
+    }
+    .text{
+        right: unset;
+        left: -66px;
+        top: 62px;
+    }
+    .text:hover{
+        left: 0px;
+    }
+    ul{
+        display: inline-block;/*直的顯示*/
+
+    }
+    li{
+        display: block;
+        line-height: 25px;
+    }
+    .main{
+        width: unset;
+        height: unset;
+    }
+    .contenter{
+        width: 100%;
+        height: 150vh;
+     }
+    #img1{
+        width: 100%;
+        height: 50vh;
+        margin-bottom: 0;
+    }
+    #img2{
+        background-color: tomato;
+        width: 100%;
+        height: 50vh;
+        margin-right: 0;
+    }
+    #img3{
+        width: 100%;
+        height: 50vh;
+        margin-left: 0;
+    }
+  
+    }
