@@ -1,0 +1,335 @@
+
+
+body {
+    margin: 0;
+    background-color: #fff;
+   
+    font-family: 'Segoe UI',SegoeUI,'Microsoft JhengHei',微軟正黑體,"Helvetica Neue",Helvetica,Arial,sans-serif;
+}
+a{
+    color: black;
+}
+ul{
+    margin: 0;
+    padding: 0;
+}
+li{
+    list-style: none;
+    display: inline-block;
+}
+.bg-fix{
+    background-size: cover;
+    background-position: center;
+}
+.hamburger{
+    width: 21px;
+    height: 22px;
+    padding-right: 10px;
+    background-image: url("../img/menu.png");
+    margin-right: 18px;
+    display: none;
+
+}
+
+.navbar1{
+    display: flex;
+}
+.sear{
+    width: 10px;
+    display: none;
+}
+.navbar{
+    font-size: 13px;
+    width: 100%;
+    max-width: 1600px;
+    display: flex;
+    padding: 0 5%;
+    box-sizing: border-box;
+    margin: auto;
+    align-items: center;
+}
+.navsearch{
+    width: 21px;
+    height: 22px;
+    background-image: url("../img/search.png");
+    display: none;
+
+
+}
+.logo{
+    width: 121px;
+    padding: 16px 13px 16px 6px;
+}
+.but{
+    margin-right: auto;
+}
+.but ul li a{
+    padding: 16px 8px 10px 8px;
+    text-decoration: none;
+}
+.but ul{
+    margin: 0;
+    padding: 0;
+}
+.but ul li{
+    list-style: none;
+    display: inline-block;
+}
+.action{
+    display: flex;
+}
+.menu-btn a, .search a, .shopping a, .Sign-in a{
+    text-decoration: none;
+    padding: 0 10px;
+    position: relative;
+}
+.menu-btn a::after{
+    content: "∨";
+    position: absolute;
+    right: -10px;
+    top: 2px;
+}
+/* .searimg, .menuimg, .shopimg, .Signimg{
+    width: 10px;
+    margin-right: 10px;
+} */
+/* .search a::after{
+    content: "🔎";
+    position: absolute;
+    right: 12px;
+    top: 30px;
+} */
+
+.search1img{
+    width: 20px;
+    height: 20px;
+    background-image: url("../img/search.png");
+}
+.search a{
+    display: flex;
+}
+.shopping1img{
+    width: 20px;
+    height: 20px;
+    background-image: url("../img/supermarket.png");
+}
+.shopping a{
+    display: flex;
+}
+.Sign-inimg{
+    width: 20px;
+    height: 20px;
+    background-image: url("../img/login.svg");
+}
+.Sign-in a{
+    display: flex;
+}
+
+
+.boxa{
+    width: 100%;
+    max-width: 1600px;
+    margin: auto;
+    padding: 0 5% 0 5%;
+    position: relative;
+}
+.bannerbtn{
+    width: 50%;
+    position: absolute;
+    bottom: 15%;
+    left: calc(25%);
+    text-align: center;
+}
+.bannerbtn h1{
+    font-size: 46px;
+}
+.group{
+    display: flex;
+    justify-content: center;
+    padding-top: 14px;
+}
+.people span{
+    background-color: black;
+    color: white;
+    margin-right: 26px;
+}
+.people span, .one span{
+    padding: 9px 20px;}
+.one span{
+    color: black;
+}
+.boxb {
+    display: flex;
+    width: 100%;
+    max-width: 1600px;
+    padding: 48px 5%;
+    margin: 0 auto;
+    box-sizing: border-box;
+    flex-wrap: wrap;
+}
+.boxc {
+
+    display: flex;
+    width: 100%;
+    max-width: 1600px;
+    padding: 0 5% 48px 5%;
+    margin: 0 auto;
+    box-sizing: border-box;
+    flex-wrap: wrap;
+}
+.workplace{
+    width: 100%;
+    max-width: 1600px;
+}
+.workplace h2{
+    padding: 24px 5% 0 5%;
+}
+
+/* css */
+
+
+/* css */
+img{
+    width: 100%;
+}
+.boxb-1 {
+    width: 25%;
+    padding-right: 24px;
+    box-sizing: border-box;
+
+}
+.boxb-2 {
+    width: 25%;
+    padding-right: 24px;
+    box-sizing: border-box;
+
+}
+.boxb-3 {
+    width: 25%;
+    padding-right: 24px;
+    box-sizing: border-box;
+
+}
+.boxb-4 {
+    width: 25%;
+    box-sizing: border-box;
+
+}
+.follow{
+    width: 100%;
+    padding: 0 5%;
+    margin: auto;
+    display: flex;
+    align-items: center;
+}
+.follow p{
+    padding-right: 15px;
+}
+.face ul{
+    margin: 0;
+    padding: 0;
+}
+.face ul li{
+    list-style: none;
+    display: inline-block;
+}
+.face ul li a{
+}
+.footer{
+    background-color: gray;
+    width: 100%;
+    height: 40vh;
+}
+@media (max-width: 1399px) {
+    .bannerbtn h1{
+        font-size: 24px;
+    }
+    .search1 span, .search1 span, .shopping1 span, .Sign-in1 span{
+        display: none;
+    }
+}
+ @media (max-width: 1083px) {
+     .banner{
+         background-image: url("../img/banner2.webp");
+     }
+     .banner2 {
+        background-image: url("../img/bannerBtm-2.jpg");
+     }
+
+    .boxa{
+        padding: 0;
+    }
+
+    .boxb-1 {
+        width: 50%;
+        padding-right: 24px;
+    }
+    .boxb-2 {
+        width: 50%;
+        padding-right: 0;
+    
+    }
+    .boxb-3 {
+        width: 50%;
+        padding-right: 24px;
+    
+    }
+    .boxb-4 {
+        width: 50%;
+    
+    }
+
+ }
+ @media (max-width: 961px) {
+     
+ }
+ @media (max-width: 859px) {
+    .banner{
+        background-image: url("../img/banner3.webp");
+    }
+    .banner2 {
+        background-image: url("../img/bannerBtm-3.webp");
+     }
+    .menu-btn a{
+        display: none;
+    }
+    .navbar{
+        justify-content: space-between;
+    }
+    .but{
+        display: none;
+    }
+    .hamburger, .navsearch{
+        display: block;
+    }
+    .search1img{
+        display: none;
+    }
+
+ }
+ @media (max-width: 539px) {
+    .boxb-1 {
+        width: 100%;
+        padding-right: 0;
+        /* width: 25%;
+        padding-right: 24px;
+        box-sizing: border-box; */
+    
+    }
+    .boxb-2 {
+        width: 100%;
+        padding-right: 0;
+    
+    }
+    .boxb-3 {
+        width: 100%;
+        padding-right: 0;
+    
+    }
+    .boxb-4 {
+        width: 100%;
+    
+    }
+
+ }
+    

@@ -56,6 +56,6 @@ class FrontController extends Controller
 
         $product_data = DB::table('product_types')->orderBy('sort','desc')->get();
 
-        return view('front/product');
+        return view('front/product',compact('product_data'));
     }
 }
