@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <title>Swiper demo</title>
+  <!-- Link Swiper's CSS -->
+  <link rel="stylesheet" href="https://unpkg.com/swiper/css/swiper.min.css">
+
+  <!-- Demo styles -->
+  <style>
+
+    body {
+      margin: 0;
+    }
+    .banner{
+        width: 100%;
+        height: 50vh;
+    }
+    .swiper-container {
+      width: 100%;
+      height: 100%;
+    }
+    img{
+      width: 100%;
+      height: 100%;
+    }
+    .white{
+      color: white;
+    }
+
+    .swiper-slide {
+      text-align: center;
+      font-size: 50px;
+      color: rgb(255, 255, 255);
+      background: rgb(77, 71, 71);
+
+      /* Center slide text vertically */
+      display: -webkit-box;
+      display: -ms-flexbox;
+      display: -webkit-flex;
+      display: flex;
+      -webkit-box-pack: center;
+      -ms-flex-pack: center;
+      -webkit-justify-content: center;
+      justify-content: center;
+      -webkit-box-align: center;
+      -ms-flex-align: center;
+      -webkit-align-items: center;
+      align-items: center;
+    }
+  </style>
+</head>
+<body>
+  <!-- Swiper -->
+  <div class="banner ">
+    <div class="swiper-container banner-container">
+        <div class="swiper-wrapper ">
+          <div class="swiper-slide">
+            <img src="https://www.newshub.co.nz/dam/form-uploaded-images-ordered/2019/11/24/GETTY-labrador-puppy-1120.jpg">
+          </div>
+          <div class="swiper-slide">
+            <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn%3AANd9GcQ9kZFqTdwjgYHF0MVZrOiBZR4aE5ERALEISNsxw15CCWTBigG9">
+          </div>
+          <div class="swiper-slide">
+            <img src="https://i.cbc.ca/1.5199221.1562191917!/fileImage/httpImage/image.jpg_gen/derivatives/16x9_780/rocket-the-dog.jpg">
+          </div>
+          <div class="swiper-slide">
+            <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn%3AANd9GcTVHKeeuNR3FEP0LNTOnsQb4F6_vifw6rMEWukXLnf3JISYCKZR">
+          </div>
+          <div class="swiper-slide">
+            <img src="https://www.newshub.co.nz/dam/form-uploaded-images-ordered/2019/11/24/GETTY-labrador-puppy-1120.jpg">
+          </div>
+          <div class="swiper-slide">
+            <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn%3AANd9GcQ9kZFqTdwjgYHF0MVZrOiBZR4aE5ERALEISNsxw15CCWTBigG9">
+          </div>
+          <div class="swiper-slide">
+            <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn%3AANd9GcTVHKeeuNR3FEP0LNTOnsQb4F6_vifw6rMEWukXLnf3JISYCKZR">
+        </div>
+      </div>
+          <!-- Add Pagination -->
+    <div class="swiper-pagination"></div>
+    <!-- Add Arrows -->
+    <div class="swiper-button-next white"></div>
+    <div class="swiper-button-prev white"></div>
+  </div>
+  <div class="swiper-container main-container">
+    <div class="swiper-wrapper ">
+      <div class="swiper-slide">
+        <img src="https://www.newshub.co.nz/dam/form-uploaded-images-ordered/2019/11/24/GETTY-labrador-puppy-1120.jpg">
+      </div>
+      <div class="swiper-slide">
+        <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn%3AANd9GcQ9kZFqTdwjgYHF0MVZrOiBZR4aE5ERALEISNsxw15CCWTBigG9">
+      </div>
+      <div class="swiper-slide">
+        <img src="https://i.cbc.ca/1.5199221.1562191917!/fileImage/httpImage/image.jpg_gen/derivatives/16x9_780/rocket-the-dog.jpg">
+      </div>
+      <div class="swiper-slide">
+        <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn%3AANd9GcTVHKeeuNR3FEP0LNTOnsQb4F6_vifw6rMEWukXLnf3JISYCKZR">
+      </div>
+      <div class="swiper-slide">
+        <img src="https://www.newshub.co.nz/dam/form-uploaded-images-ordered/2019/11/24/GETTY-labrador-puppy-1120.jpg">
+      </div>
+      <div class="swiper-slide">
+        <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn%3AANd9GcQ9kZFqTdwjgYHF0MVZrOiBZR4aE5ERALEISNsxw15CCWTBigG9">
+      </div>
+      <div class="swiper-slide">
+        <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn%3AANd9GcTVHKeeuNR3FEP0LNTOnsQb4F6_vifw6rMEWukXLnf3JISYCKZR">
+    </div>
+  </div>
+</div>
+</div>
+
+
+
+
+  <!-- Swiper JS -->
+  <script src="https://unpkg.com/swiper/js/swiper.min.js"></script>
+
+  <!-- Initialize Swiper -->
+  <script>
+   var galleryThumbs = new Swiper('.main-container', {
+      spaceBetween: 10,
+      slidesPerView: 4,
+      freeMode: true,
+      watchSlidesVisibility: false,
+      watchSlidesProgress: true,
+    });
+    var galleryTop = new Swiper('.banner-container', {
+      spaceBetween: 10,
+      navigation: {
+        nextEl: '.swiper-button-next',
+        prevEl: '.swiper-button-prev',
+      },
+      thumbs: {
+        swiper: galleryThumbs
+      }
+    });
+    
+  </script>
+</body>
+</html>

@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        body {
+            margin: 0;
+            height: 100vh;
+            display: flex;
+            align-items: center;
+        }
+
+        .all {
+            width: 50%;
+            margin: auto;
+        }
+
+        .pages {
+
+            text-align: center;
+            display: flex;
+        }
+
+        .page {
+            /* border-radius: 15px; */
+            border: 1px solid black;
+            flex: 1;
+            font-size: 25px;
+            background-color: rgb(71, 70, 70);
+        }
+
+        .page:nth-child(1) {
+            border-right: none;
+        }
+
+        .page:nth-child(2) {
+            border-right: none;
+        }
+
+        .page.active {
+            background-color: rgb(255, 255, 255);
+            border-bottom: none;
+        }
+
+        .content {
+            padding: 20px;
+            display: none;
+            /* border-top: none; */
+        }
+
+        .content.active {
+            display: block;
+        }
+
+        .content:nth-child(1) {
+            border-top: 0;
+        }
+
+        .content:nth-child(2) {
+            border-top: 0;
+        }
+
+        .content:nth-child(3) {
+            border-top: 0;
+        }
+    </style>
+
+
+</head>
+
+<body>
+    <div class="all">
+        <div class="pages">
+            <div class="page active">沙鍋料理</div>
+            <div class="page ">阿菁健康涼菜</div>
+            <div class="page">米飯/冬粉</div>
+            <div class="page ">單點品項</div>
+            <div class="page">湯類/飲料</div>
+        </div>
+        <div class="contents">
+            <div class="content ">
+                <h1>Title1</h1>
+                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptatem nostrum dicta eos dolorem
+                    officiis qui provident omnis ipsam sapiente totam doloremque distinctio cumque animi ut hic incidunt
+                    delectus, ab quia?</p>
+            </div>
+            <div class="content active">
+                <h1>Title2</h1>
+                <p>Lorem ipsum dolor sit amet.</p>
+            </div>
+            <div class="content">
+                <h1>Title3</h1>
+                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Reiciendis ab vero libero dolor eius quia
+                    accusantium fugiat debitis tenetur dolorem. Quo ipsa, veritatis magni corrupti consectetur eligendi.
+                    Eligendi, animi molestiae expedita mollitia ipsa commodi omnis libero incidunt in et rem
+                    reprehenderit vel officiis blanditiis fugit tempore ut nihil error consectetur.</p>
+            </div>
+            <div class="content">
+                <h1>Title3</h1>
+                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Reiciendis ab vero libero dolor eius quia
+                    accusantium fugiat debitis tenetur dolorem. Quo ipsa, veritatis magni corrupti consectetur eligendi.
+                    Eligendi, animi molestiae expedita mollitia ipsa commodi omnis libero incidunt in et rem
+                    reprehenderit vel officiis blanditiis fugit tempore ut nihil error consectetur.</p>
+            </div>
+            <div class="content">
+                <h1>Title3</h1>
+                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Reiciendis ab vero libero dolor eius quia
+                    accusantium fugiat debitis tenetur dolorem. Quo ipsa, veritatis magni corrupti consectetur eligendi.
+                    Eligendi, animi molestiae expedita mollitia ipsa commodi omnis libero incidunt in et rem
+                    reprehenderit vel officiis blanditiis fugit tempore ut nihil error consectetur.</p>
+            </div>
+        </div>
+    </div>
+
+    <script src="https://code.jquery.com/jquery-3.4.1.min.js"
+        integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo=" crossorigin="anonymous"></script>
+
+    <script>
+
+        $('.page').click(function () {
+            $('*').removeClass('active');
+            $(this).addClass('active');
+            const num = $(this).index();
+            // console.log(num)
+            // aa= $('.content');
+            $($('.content')[num]).addClass('active');
+
+            // console.log(aa)
+            // .addClass('active')
+        })
+
+        // for(let i=0;i<$('.page').length;i++)
+        // {
+        //     const page1=$('.page')[i];
+        //     const content1=$('.content')[i];
+        //     page1.onclick=function(){
+        //         del()
+        //     page1.classList.add('active');
+        //     content1.classList.add('active');
+
+        //     }
+
+        // }
+
+        // function del()
+        // {
+        //     for(let j=0;j<$('.page').length;j++)
+
+        //     {
+        //     const page1=$('.page')[j];
+        //     const content1=$('.content')[j];
+        //     page1.classList.remove('active');
+        //     content1.classList.remove('active');
+        //     }
+        // }
+
+
+
+
+
+
+    </script>
+
+</body>
+
+</html>

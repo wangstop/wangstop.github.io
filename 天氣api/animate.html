@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.7.2/animate.min.css">
+
+    <style>
+        body{
+            display:flex;
+        }
+        .hvr-back-pulse{
+            width: 200px;
+            height: 200px;
+            background-color: rgb(255, 153, 127);
+        }
+
+@-webkit-keyframes hvr-back-pulse {
+  50% {
+    background-color: rgba(32, 152, 209, 0.75);
+  }
+}
+@keyframes hvr-back-pulse {
+  50% {
+    background-color: rgba(32, 152, 209, 0.75);
+  }
+}
+.hvr-back-pulse {
+  display: inline-block;
+  vertical-align: middle;
+  -webkit-transform: perspective(1px) translateZ(0);
+  transform: perspective(1px) translateZ(0);
+  box-shadow: 0 0 1px rgba(0, 0, 0, 0);
+  overflow: hidden;
+  -webkit-transition-duration: 0.5s;
+  transition-duration: 0.5s;
+  -webkit-transition-property: color, background-color;
+  transition-property: color, background-color;
+}
+.hvr-back-pulse:hover, .hvr-back-pulse:focus, .hvr-back-pulse:active {
+  -webkit-animation-name: hvr-back-pulse;
+  animation-name: hvr-back-pulse;
+  -webkit-animation-duration: 1s;
+  animation-duration: 1s;
+  -webkit-animation-delay: 0.5s;
+  animation-delay: 0.5s;
+  -webkit-animation-timing-function: linear;
+  animation-timing-function: linear;
+  -webkit-animation-iteration-count: infinite;
+  animation-iteration-count: infinite;
+  background-color: rgb(138, 27, 82);
+  background-color: #5e0699;
+  color: white;
+}
+    </style>
+
+</head>
+<body>
+    <div class="hvr-back-pulse"></div>
+    <!-- <div class="box animated swing infinite  faster" ></div>
+    <div class="box animated swing infinite  faster" ></div>
+    <div class="box animated swing infinite  faster" ></div>
+    <div class="box animated swing infinite  faster" ></div>
+    <div class="box animated swing infinite  faster" ></div>
+    <div class="box animated swing infinite  faster" ></div>
+    <div class="box animated swing infinite  faster" ></div>
+    <div class="box animated swing infinite  faster" ></div>
+    <div class="box animated swing infinite  faster" ></div>
+    <div class="box animated swing infinite  faster" ></div>
+    <div class="box animated swing infinite  faster" ></div> -->
+
+
+</body>
+</html>
