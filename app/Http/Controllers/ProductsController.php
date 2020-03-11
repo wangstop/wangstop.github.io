@@ -175,8 +175,10 @@ class ProductsController extends Controller
 
         $products->delete();
 
+        // redirect帶值回route再回去ProductsController拿值回來
         return redirect('/home/products');
 
+        // view直接顯示網址不帶值
         // return view('/home/products');
     }
 

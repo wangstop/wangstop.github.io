@@ -36,9 +36,9 @@
                 <td>
                 <a href="/admin/product_type/edit/{{$item->id}}" class="btn btn-success ">修改</a>
                     <button class="btn btn-danger "onclick="disp_confirm({{$item->id}})">刪除</button>
-                    <form id="logout-form-{{$item->id}}" action="/admin/product_type/delete/{{$item->id}}" method="POST" style="display: none;">
+                    {{-- <form id="logout-form-{{$item->id}}" action="/admin/product_type/delete/{{$item->id}}" method="POST" style="display: none;">
                         @csrf
-                    </form>
+                    </form> --}}
 
                 </td>
 

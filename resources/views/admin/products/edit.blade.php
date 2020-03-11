@@ -32,39 +32,20 @@
         <input type="file" class="form-control" id="img" name="img" >
         </div>
 
-{{--
-        <div class="form-group">
-
-            <label for="img">多張圖片修改</label>
-            <input type="file" class="form-control" id="multipleimg" name="multipleimg[]"  multiple>
-
-            <div class="row ">
-
-                 @foreach ($news->img_data as $item)
-
-                    <div class="col-2 " datanewingid="{{$item->id}}">
-                        <div class="card-img " >
-                            <button type="button" class="box btn btn-danger" datanewingid="{{$item->id}}">X</button>
-
-                            <img src="{{$item->img_url}}" alt="" class="img-fluid" width="100%">
-                            <input type="number" class="form-control " id="sort" name="sort" value="{{$item->sort}}" onchange ="ajax_post_sort(this,{{$item->id}})">
-                        </div>
-                     </div>
-
-                    @endforeach
-              </div>
-       </div> --}}
-
-
 
 
         <div class="form-group">
             <label for="type_id">Title</label>
             <select name="type_id">
                 @foreach ($product_types as $items)
+                    @if($items->id == $products->type_id)
+            　<option value="{{$items->id}}" selected>{{$items->types}}</option>
 
+                    @else
 
-            　<option value="{{$items->id}}">{{$items->types}}</option>
+                    　<option value="{{$items->id}}" >{{$items->types}}</option>
+                    
+                    @endif
 
                 @endforeach
 
