@@ -175,8 +175,9 @@ class ProductsController extends Controller
 
         $products->delete();
 
+        return redirect('/home/products');
 
-        return view('/admin/products/index');
+        // return view('/home/products');
     }
 
     private function fileUpload($file, $dir)

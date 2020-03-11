@@ -65,12 +65,15 @@
                         最新消息
                     </a>
                 </li>
+
                 <li class="nav-item">
                     <a class="nav-link link text-white display-4" href="">
-                        <span class="mbri-search mbr-iconfont mbr-iconfont-btn"></span>
+                        <span class="mbri-search mbr-iconfont mbr-iconfont-btn">聯絡我們</span>
                     </a>
                 </li>
             </ul>
+
+
             <div class="navbar-buttons mbr-section-btn">
                 <a class="btn btn-sm btn-primary display-4" href="/proucts_Types">
                     <span class="mbri-save mbr-iconfont mbr-iconfont-btn "></span>

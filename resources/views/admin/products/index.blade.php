@@ -85,7 +85,7 @@
 
 $(document).ready(function() {
     $('#example').DataTable({
-    "order": [[ 1, 'desc' ]]
+    "order": [[ 3, 'desc' ]]
     // 權重排序0是針對誰去調desc大排到小
 } );
 } );
