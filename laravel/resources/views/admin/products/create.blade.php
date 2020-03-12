@@ -21,7 +21,7 @@
         </div>
 
         <div class="form-group">
-            <label for="type_id">Title</label>
+            <label for="type_id">種類</label>
             <select name="type_id">
                 @foreach ($product_type as $item)
             　<option value="{{$item->id}}">{{$item->types}}</option>
@@ -32,12 +32,18 @@
           </div>
 
         <div class="form-group">
-            <label for="title">Title</label>
-            <input type="text" class="form-control" id="title" name="title" required>
+            <label for="price">價錢</label>
+            <input type="text" class="form-control" id="price" name="price" required>
           </div>
 
           <div class="form-group">
-            <label for="content">Content</label>
+            <label for="title">名稱</label>
+            <input type="text" class="form-control" id="title" name="title" required>
+          </div>
+
+
+          <div class="form-group">
+            <label for="content">內容</label>
 
             <input type="text" class="form-control" id="content" name="content" required>
           </div>

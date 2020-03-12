@@ -19,6 +19,7 @@ class CreateProducts extends Migration
 
             $table->string('img');
             $table->string('title');
+            $table->string('price')->default(0);
             $table->string('content');
             $table->string('sort')->default(0);
             $table->string('type_id');

@@ -17,9 +17,9 @@
 
 
 
+                @foreach ($products as $item)
 
                 <div class="card col-12 col-md-6 p-3 col-lg-4 ">
-                @foreach ($products as $item)
 
                     <div class="card-wrapper">
                         <div class="card-img">
@@ -40,9 +40,8 @@
                             </div>
                         </div>
                     </div>
-                @endforeach
-
                 </div>
+                @endforeach
 
 
 

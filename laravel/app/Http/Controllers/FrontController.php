@@ -70,37 +70,37 @@ class FrontController extends Controller
         return view('front/product',compact('products'));
     }
 
-    public function cart(){
+    public function product_detail(){
 
         // $products = DB::table('products')->orderBy('sort','desc')->get();
 
-        return view('front/cart');
+        return view('front/product_detail');
     }
 
 
-    public function add_cart($product_id){
+    // public function add_cart($product_id){
 
-        $Product = Products::find($product_id); // assuming you have a Product model with id, name, description & price
-        $rowId = 456; // generate a unique() row ID
-        $userID = Auth::()->id; // the user ID to bind the cart contents
+    //     $Product = Products::find($product_id); // assuming you have a Product model with id, name, description & price
+    //     $rowId = 456; // generate a unique() row ID
+    //     $userID = Auth::()->id; // the user ID to bind the cart contents
 
 
-        // add the product to cart
-        \Cart::session($userID)->add(array(
-            'id' => $rowId,
-            'name' => $Product->name,
-            'price' => $Product->price,
-            'quantity' => 4,
-            'attributes' => array(),
-            'associatedModel' => $Product
-        ));
+    //     // add the product to cart
+    //     \Cart::session($userID)->add(array(
+    //         'id' => $rowId,
+    //         'name' => $Product->name,
+    //         'price' => $Product->price,
+    //         'quantity' => 4,
+    //         'attributes' => array(),
+    //         'associatedModel' => $Product
+    //     ));
 
-    }
+    // }
 
-    public function cart_total(){
+    // public function cart_total(){
 
-        $items = \Cart::session($userID)->getContent();
+    //     $items = \Cart::session($userID)->getContent();
 
-    }
+    // }
 
 }

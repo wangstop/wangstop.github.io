@@ -23,7 +23,7 @@
                 <th>圖片</th>
                 <th>飲品類型</th>
                 <th>飲品名稱</th>
-
+                <th>價錢</th>
                 <th>權重</th>
                 <th>內容</th>
                 <th>功能</th>
@@ -38,6 +38,7 @@
                 </td>
                 <td>{{$item->drink->types}}</td>
                 <td>{{$item->title}}</td>
+                <td>{{$item->price}}</td>
                 <td>{{$item->sort}}</td>
                 <td>{{$item->content}}</td>
 

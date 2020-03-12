@@ -44,13 +44,18 @@
                     @else
 
                     　<option value="{{$items->id}}" >{{$items->types}}</option>
-                    
+
                     @endif
 
                 @endforeach
 
                 </select>
         </div>
+
+        <div class="form-group">
+            <label for="price">價錢</label>
+            <input type="text" class="form-control" id="price" name="price" value="{{$products->price}}">
+          </div>
 
           <div class="form-group">
             <label for="sort">權重(數字越大越前面)</label>

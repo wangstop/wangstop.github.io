@@ -19,16 +19,16 @@
   <link rel="stylesheet" href="{{asset('assets/tether/tether.min.css')}}">
   <link rel="stylesheet" href="{{asset('assets/theme/css/style.css')}}">
   <link rel="stylesheet" href="{{asset('assets/gallery/style.css')}}">
-  <link rel="preload" as="style" href="{{asset('assets/mobirise/css/mbr-additional.css')}}"><link rel="stylesheet" href="{{asset('assets/mobirise/css/mbr-additional.css')}}" type="text/css">
+  <link rel="preload" as="style" href="{{asset('assets/mobirise/css/mbr-additional.css')}}">
+  <link rel="stylesheet" href="{{asset('assets/mobirise/css/mbr-additional.css')}}" type="text/css">
 
-{{-- <style>
+
+<style>
     .padding-top{
         padding-top: 200px;
     }
 
-
-
-</style> --}}
+</style>
 
 @yield('css')
 
@@ -63,24 +63,32 @@
         </div>
         <div class="collapse navbar-collapse" id="navbarSupportedContent">
             <ul class="navbar-nav nav-dropdown" data-app-modern-menu="true">
+
                 <li class="nav-item">
                     <a class="nav-link link text-white display-4" href="/news">
                         <span class="mbri-home mbr-iconfont mbr-iconfont-btn"></span>
                         最新消息
                     </a>
                 </li>
-
                 <li class="nav-item">
-                    <a class="nav-link link text-white display-4" href="/cart">
-                        <span class="mbri-search mbr-iconfont mbr-iconfont-btn">購物車</span>
+                    <a class="nav-link link text-white display-4" href="/proucts_Types
+                    ">
+                        <span class="mbri-home mbr-iconfont mbr-iconfont-btn"></span>
+                        產品
                     </a>
                 </li>
+
+                <li class="nav-item">
+                    <a class="nav-link link text-white display-4" href="/product_detail">
+                        購物車
+                    </a>
+                </li>
+
             </ul>
 
 
             <div class="navbar-buttons mbr-section-btn">
                 <a class="btn btn-sm btn-primary display-4" href="/proucts_Types">
-                    <span class="mbri-save mbr-iconfont mbr-iconfont-btn "></span>
                     Shopping
                 </a>
             </div>
@@ -211,5 +219,6 @@
 
 
   @yield('js')
+
 </body>
 </html>
