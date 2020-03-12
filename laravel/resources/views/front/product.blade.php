@@ -1,3 +1,5 @@
+
+
 @extends('/layouts/nav')
 
 
@@ -11,29 +13,41 @@
 
     <!--Container-->
     <div class="container">
-        <div class="row justify-content-center">
+        <div class="row justify-content-center padding-top">
 
-            <div class="card col-12 col-md-6 p-3 col-lg-4 mt-5">
 
-                @foreach ($product_data as $item)
-                <div class="card-wrapper">
-                    <div class="card-box">
-                        <h4 class="card-title mbr-fonts-style display-5">
-                           {{$item->types}}
-                        </h4>
 
-                        <!--Btn-->
-                        <div class="mbr-section-btn align-left">
-                            <a href="https://mobirise.co" class="btn btn-warning-outline display-4">
-                                $ 690
-                            </a>
+
+                <div class="card col-12 col-md-6 p-3 col-lg-4 ">
+                @foreach ($products as $item)
+
+                    <div class="card-wrapper">
+                        <div class="card-img">
+                            <img src="{{$item->img}}" alt="Mobirise">
+                        </div>
+                        <div class="card-box">
+                            <h4 class="card-title mbr-fonts-style display-5">
+                                {{$item->title}}
+                            </h4>
+                            <p class="mbr-text mbr-fonts-style display-7">
+                                {{$item->content}}
+                            </p>
+                            <!--Btn-->
+                            <div class="mbr-section-btn align-left">
+                                <a href="https://mobirise.co" class="btn btn-warning-outline display-4">
+                                    $ 790
+                                </a>
+                            </div>
                         </div>
                     </div>
-                </div>
-
                 @endforeach
 
-            </div>
+                </div>
+
+
+
+
+
 
         </div>
     </div>
