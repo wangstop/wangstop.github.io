@@ -1,0 +1,15 @@
+@media (max-width:575px) {
+    .nav-link {
+        padding: 0rem 0.5rem;
+    }
+
+    #nav {
+        padding: 0 30px;
+    }
+}
+
+@media (min-width: 768px) {
+    .navbar-expand-md .navbar-nav .nav-link {
+        padding-right: 0;
+    }
+}

@@ -1,0 +1,418 @@
+body {
+    margin: 0;
+    padding: 0;
+    font-family: "Noto Sans TC", sans-serif;
+    box-sizing: border-box;
+    
+    h1 {
+        font-size: 1.6rem;
+    }
+    h2 {
+        font-size: 1.2rem;
+    }
+    p {
+        font-size: 0.8rem;
+    }
+    @media (max-width: 720px) {
+        h1 {
+            font-size: 1.4rem;
+        }
+
+        h2 {
+            font-size: 1rem;
+        }
+
+        p {
+            font-size: 0.7rem;
+        }
+    }
+
+    @media (max-width: 540px) {
+        h1 {
+            font-size: 1.2rem;
+        }
+
+        h2 {
+            font-size: 0.8rem;
+        }
+
+        p {
+            font-size: 0.5rem;
+        }
+    }
+}
+
+
+html {
+    font-size: 24px;
+    scroll-behavior: smooth;
+}
+
+$big-title: 48px;
+$small-title: 30px;
+$content: 18px;
+$sectionToTitle: 100px;
+$TitleToSmalltitle: 100px;
+$SmalltitleToContent: 50px;
+$ContentToContent: 30px;
+
+ul {
+    padding: 0;
+    margin: 0;
+
+    li {
+        list-style: none;
+    }
+}
+
+.navbar-top {
+    padding: 0px !important;
+    .container{
+        .navbar{
+            padding: 0;
+            .collapse{
+
+                ul {
+                  li {
+                      padding: 0 10px;
+                      font-size: 0.75rem;
+                      a{
+                          color: white;
+                          text-decoration: none;
+                          padding-left: 0;
+                      }
+                  }
+              }
+              }
+        }
+    }
+
+    .navbar-brand {
+        margin-right: 0;
+    }
+
+    span {
+        font-size: 1rem;
+    }
+    .navbar-toggler {
+        border-color: white !important;
+    }
+}
+
+
+
+.navbar_1 {
+    background-color: black;
+    font-size: 18px;
+    // .navbar-toggler-icon{
+    //     background-image: url('/img/open-menu.svg');
+    // }
+    
+
+
+    .navbar-toggler {
+        padding: 0 10px;
+        border-color: white;
+        svg {
+            width: 40px;
+            height: 50px;
+            fill: white;
+        }
+    }
+
+    ul {
+        li {
+            color: white;
+            padding: 0 10px;
+            font-size: 0.75rem ;
+            a {
+                color: white;
+                text-decoration: none;
+            }
+        }
+    }
+}
+.navbar_1.active{
+    
+    transition: opacity 1s ease-in-out;
+    top: 0;
+    position: fixed;
+    width: 100%;
+    z-index: 10;
+    background-color: rgba($color: #000000, $alpha: 0.5);
+}
+
+.banner {
+    img {
+        width: 100%;
+    }
+    background-color: black;
+    padding: 180px 0;
+    // background-image: url("../img/keyvisual.jpg");
+    // height: 875px;
+    // width: 100%;
+    // background-repeat: no-repeat;
+    // background-size: cover;
+    // background-position: center;
+}
+
+.footer2.active1{
+    position: unset;
+}
+
+.story {
+    background-color: #231815;
+    padding: $sectionToTitle 0;
+    overflow: hidden;
+    position: relative;
+    .container {
+        position: unset;
+        .swiper-container {
+            position: unset;
+            .swiper-button-next {
+                color: #ffe282;
+            }
+            .swiper-button-prev {
+                color: #ffe282;
+            }
+        }
+        .story-title {
+            color: white;
+            padding-bottom: $TitleToSmalltitle;
+            padding-left: 15px;
+            font-size: 2rem;
+
+            .small-title {
+                font-size: 1.25rem;
+            }
+
+            .small-content {
+                font-size: 0.75rem;
+            }
+        }
+
+        .story-content {
+            .img-6 {
+                padding-left: 0;
+                img {
+                    padding-bottom: $ContentToContent;
+                }
+            }
+            .col-lg-6.col-12.pading {
+                padding-left: 15px;
+                @media (max-width: 992px) {
+                    padding: 0px;
+                }
+            }
+            #carouselExampleFade {
+                .carousel-control-next {
+                    right: -100px;
+                }
+
+                .carousel-control-prev {
+                    left: -100px;
+                }
+            }
+            .small-title {
+                padding-bottom: $ContentToContent;
+            }
+        }
+    }
+}
+
+.attitude {
+    padding: $sectionToTitle 0;
+    background-color: black;
+    color: white;
+    overflow: hidden;
+
+    .container {
+        .attitude-title {
+            font-size: 2rem;
+            padding-left: 15px;
+        }
+
+        .attitude-content {
+            padding-top: $TitleToSmalltitle;
+
+            .content-one {
+                padding-bottom: $ContentToContent;
+
+                .col-lg-5.col-12 {
+                    @media (max-width: 992px) {
+                        order: 3;
+                    }
+                }
+                .col-lg-1 {
+                    @media (max-width: 992px) {
+                        order: 2;
+                    }
+                }
+                .col-lg-6.col-12 {
+                    img {
+                        padding-bottom: $ContentToContent;
+                    }
+                    @media (max-width: 992px) {
+                        order: 1;
+                    }
+                }
+                .col-5 {
+                    .title {
+                        padding-bottom: $SmalltitleToContent;
+                        font-size: 1.25rem;
+                    }
+
+                    .content {
+                        font-size: 0.75rem;
+                    }
+                }
+            }
+
+            .content-two {
+                padding-bottom: $ContentToContent;
+                img {
+                    padding-bottom: $ContentToContent;
+                }
+                .col-5 {
+                    .title {
+                        padding-bottom: $SmalltitleToContent;
+                        font-size: 1.25rem;
+                    }
+
+                    .content {
+                        font-size: 0.75rem;
+                    }
+                }
+            }
+        }
+        .title {
+            padding-bottom: $ContentToContent;
+        }
+    }
+}
+
+.product {
+    background-image: url("/img/whiskey.jpg");
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-attachment: fixed;
+    padding: $sectionToTitle 0;
+    color: white;
+
+    .lightbox-target{
+
+        z-index: 11 ;
+
+    }
+
+    .detail {
+        width: 500px;
+        height: 500px;
+    }
+
+    .product-title {
+        font-size: 2rem;
+        padding-bottom: $TitleToSmalltitle;
+        padding-left: 15px;
+    }
+
+    .product-content {
+        .img-fluid {
+            min-height: 100%;
+        }
+
+        .content {
+            font-size: 0.75rem;
+            padding-top: 60px;
+
+            .name {
+                font-size: 1.25rem;
+            }
+
+            .pad {
+                padding-bottom: $ContentToContent;
+            }
+        }
+    }
+    .Tasting-Note{
+        padding-bottom:30px;
+    }
+}
+
+.method {
+    color: white;
+    background-color: black;
+    padding: $sectionToTitle 0;
+    overflow: hidden;
+
+    .container {
+        .method-title {
+            padding-bottom: $TitleToSmalltitle;
+            padding-left: 15px;
+            font-size: 2rem;
+        }
+
+        .swiper-container {
+            img {
+                padding-bottom: $ContentToContent;
+            }
+            .title {
+                padding-bottom: $SmalltitleToContent;
+                font-size: 1.25rem;
+            }
+
+            .content {
+                font-size: 0.75rem;
+            }
+        }
+    }
+}
+
+.carousel-control-next {
+    right: -100px;
+}
+
+.carousel-control-prev {
+    left: -100px;
+}
+
+.sure {
+    padding: $sectionToTitle 0;
+    background-color: black;
+    color: balck;
+    overflow: hidden;
+    .sure-title {
+        color: white;
+        font-size: 2rem;
+    }
+
+    .timeline {
+        .timeline-block {
+            .timeline-content {
+                p {
+                    font-size: 100px;
+                }
+            }
+        }
+    }
+}
+
+p {
+    font-size: 0.75rem;
+}
+
+.footer {
+    width: 100%;
+    height: 50px;
+    background-color: #231815;
+    color: white;
+}
+.footer2{
+    width: 100%;
+    background-color: white;
+    position: fixed;
+    bottom: 0px;
+    z-index: 10;
+    
+}
