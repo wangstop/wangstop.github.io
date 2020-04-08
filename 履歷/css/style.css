@@ -1,0 +1,38 @@
+body {
+  margin: 0;
+  padding: 0;
+}
+
+li {
+  list-style: none;
+}
+
+img {
+  width: 100%;
+}
+
+#close.del {
+  display: none;
+}
+
+.banner-title-font {
+  font-size: 4.5rem;
+  color: white;
+}
+
+@media (max-width: 576px) {
+  .banner-title-font {
+    font-size: 3.5rem;
+  }
+}
+
+.banner-inner-font {
+  font-size: 1.6rem;
+  color: white;
+}
+
+.banner .head .head-img {
+  width: 200px;
+  border-radius: 30px;
+}
+/*# sourceMappingURL=style.css.map */
