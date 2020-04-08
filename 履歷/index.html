@@ -9,6 +9,8 @@
     <link rel="stylesheet" href="/css/style.css">
     <link rel="stylesheet" href="/css/timeline.css">
     <link rel="stylesheet" href="/css/skill.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/lightbox2/2.11.1/css/lightbox.css">
+
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/css/bootstrap.min.css"
         integrity="sha384-GJzZqFGwb1QTTN6wy59ffF1BuGJpLSa9DkKMp0DgiMDm4iYMj70gZWKYbI706tWS" crossorigin="anonymous">
 
@@ -23,10 +25,10 @@
             </div>
             <div id="mainListDiv" class="main_list">
                 <ul class="navlinks">
-                    <li><a href="#">自傳</a></li>
-                    <li><a href="#">學歷</a></li>
-                    <li><a href="#">技能</a></li>
-                    <li><a href="#">作品</a></li>
+                    <li><a class="delay" href="#areA">自傳</a></li>
+                    <li><a class="delay" href="#areB">學歷</a></li>
+                    <li><a class="delay" href="#areC">技能</a></li>
+                    <li><a class="delay" href="#areD">作品</a></li>
 
                 </ul>
             </div>
@@ -39,12 +41,12 @@
     </nav>
 
     <main>
-        <section class="banner d-flex align-items-center">
+        <section id="areA" class="banner d-flex align-items-center">
             <div id="close" class="container">
                 <div class="row">
                     <div class="col-sm p-5">
                         <div class="banner-title ">
-                            <h1 class="banner-title-font">自傳</h1>
+                            <h1  class="banner-title-font">自傳</h1>
                         </div>
                         <div class="banner-inner banner-inner-font">
                             <p>我是王耀庭，是位對寫程式抱有熱情的男生。研究所畢業退伍後，透過職訓課程接觸到前後端之後，發現非常有趣，我會努力給使用者更好的網站體驗</p>
@@ -64,7 +66,7 @@
 
         <section>
             <div class="timeline">
-                <h1 class="banner-title-font">學歷</h1>
+                <h1 id="areB" class="banner-title-font">學歷</h1>
 
                 <ul>
                     <li>
@@ -88,16 +90,16 @@
 
         </section>
         <section>
-            <div class="skill-inner">
+            <div class="skill-inner ">
                 <div class="timeline">
-                    <h1 class="banner-title-font">技能</h1>
+                    <h1 id="areC" class="banner-title-font">技能</h1>
                 </div>
 
-                <div class="container">
+                <div class="container p-50">
                     <div class="row">
                         <div class="col-sm">
                             <div class="skill-inner-left">
-                                <h1>前端</h1>
+                                <h1 class="pb-5" >前端</h1>
                                 <div class="skill">
                                     <h2>HTML</h2>
                                     <div class="rating-bar">
@@ -142,7 +144,7 @@
                         </div>
                         <div class="col-sm">
                             <div class="skill-inner-right">
-                                <h1>後端</h1>
+                                <h1 class="pb-5 skill-space" >後端</h1>
                                 <div class="skill">
                                     <h2>php</h2>
                                     <div class="rating-bar">
@@ -170,13 +172,78 @@
         <section>
             <div class="work">
                 <div class="timeline">
-                    <h1 class="banner-title-font">作品</h1>
+                    <h1 id="areD" class="banner-title-font">作品</h1>
                 </div>
-                
+                <div class="container p-50">
+                    <h1 class="pb-5">前端</h1>
+
+                    <div class="row">
+                        <div class="col-md-6 pb-5 mask">
+                            <h3>Microsoft – Fluent Design System / 仿切</h3>
+                            <a href="https://wangstop.github.io/design/">
+                                
+                                <img src="/img/fluent.png" alt="fluent">
+                            </a>
+                        </div>
+                        <div class="col-md-6 pb-5 mask">
+                            <h3>Windows仿切</h3>
+
+                            <a href="https://wangstop.github.io/Microsoft/">
+                                <img src="/img/window.png" alt="window">
+                            </a>
+                        </div>
+                        <div class="col-md-6 pb-5 mask">
+                            <h3>專題-山崎</h3>
+
+                            <a href="https://wangstop.github.io/%E5%B0%88%E9%A1%8C/%E5%B1%B1%E5%B4%8E/
+                            ">
+                                <img src="/img/山崎.png">
+                            </a>
+                        </div>
+                        <div class="col-md-6 pb-5 mask">
+                            <h3>專題-首頁</h3>
+
+                            <a href="https://wangstop.github.io/%E5%B0%88%E9%A1%8C/%E9%A6%96%E9%A0%81/
+                            ">
+                                <img src="/img/首頁.png">
+                            </a>
+                        </div>
+                    </div>
+
+                    <h1 class="pt-50 pb-5">Laravel實作</h1>
+                    <div class="row">
+                        <div class="col-md-6 pb-5 mask">
+                            <h3>登入</h3>
+                            <a href="/img/登入.jpg" data-lightbox="image-1" data-title="登入">
+                                <img src="/img/登入.jpg" alt=""></a>
+                        </div>
+                        <div class="col-md-6 pb-5 mask">
+                            <h3>新增</h3>
+                            <a href="/img/新增.jpg" data-lightbox="image-2" data-title="新增">
+                                <img src="/img/新增.jpg" alt=""></a>
+                        </div>
+                        <div class="col-md-6 pb-5 mask">
+                            <h3>修改</h3>
+                            <a href="/img/修改.jpg" data-lightbox="image-3" data-title="修改">
+                                <img src="/img/修改.jpg" alt=""></a>
+                        </div>
+                        <div class="col-md-6 pb-5 mask">
+                            <h3>刪除</h3>
+                            <a href="/img/刪除.jpg" data-lightbox="image-4" data-title="刪除">
+                                <img src="/img/刪除.jpg" alt=""></a>
+                        </div>
+
+                    </div>
+                </div>
             </div>
         </section>
     </main>
 
+    <footer>
+        <div class="footer text-center text-white">
+            <span>Copyright ©2020</span>
+        </div>
+    </footer>
 
 
     <!-- Jquery needed -->
@@ -211,6 +278,9 @@
 
     <script src="/js/style.js"></script>
     <script src="/js/timeline.js"></script>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/lightbox2/2.11.1/js/lightbox-plus-jquery.min.js"></script>
+
 
 </body>
 
